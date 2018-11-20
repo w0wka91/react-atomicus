@@ -1,7 +1,8 @@
 import React from 'react'
 import { css } from 'emotion'
-import { colors } from '../../colors'
 import { darken } from 'polished'
+import { colors } from '../../utils/colors';
+import { shadows } from '../../utils/shadows';
 
 interface Props {
   size: 'small' | 'medium' | 'large'
@@ -10,23 +11,36 @@ interface Props {
   children: React.ReactNode
 }
 
-function Button({ size, intent, fluid, children }: Props & React.HTMLProps<HTMLButtonElement>) {
-  const padding = {
-    small: '0.4rem 0.8rem',
-    medium: '0.8rem 1.2rem',
-    large: '1.2rem 1.6rem',
+function Button({
+  size,
+  intent,
+  fluid,
+  children,
+}: Props & React.HTMLProps<HTMLButtonElement>) {
+  const sizes = {
+    small: css`
+      padding: 0.4rem 0.8rem;
+      font-size: 1.4rem;
+    `,
+    medium: css`
+      padding: 0.8rem 1.2rem;
+      font-size: 1.6rem;
+    `,
+    large: css`
+      padding: 1.2rem 1.rem;
+      font-size: 1.8rem;
+    `,
   }
   return (
     <button
       className={css`
         border: none;
-        box-shadow: var(--shadow-light);
+        box-shadow: ${shadows.shadowLight};
         cursor: pointer;
         border-radius: 2px;
         transition: all 0.2s;
         font-weight: inherit;
-        font-family: inherit;
-        font-size: inherit;
+        font-family: 'Montserrat', sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -34,18 +48,18 @@ function Button({ size, intent, fluid, children }: Props & React.HTMLProps<HTMLB
           cursor: default;
           opacity: 0.45;
         }
-        padding: ${padding[size]};
         background-color: ${colors[intent]};
         &:hover:enabled,
         &:focus:enabled {
-          background-color: ${darken(0.1, colors[intent])};
+          background-color: ${darken(0.05, colors[intent])};
         }
         &:active:enabled,
         &:target:enabled {
-          background-color: ${darken(0.2, colors[intent])};
+          background-color: ${darken(0.1, colors[intent])};
         }
+        ${sizes[size]}
         color: ${intent !== 'none' && 'white'};
-        width: ${fluid && '100%'}
+        width: ${fluid && '100%'};
       `}
     >
       {children}
