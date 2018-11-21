@@ -27,7 +27,7 @@ function Button({
       font-size: 1.6rem;
     `,
     large: css`
-      padding: 1.2rem 1.rem;
+      padding: 1.2rem 1.6rem;
       font-size: 1.8rem;
     `,
   }
@@ -35,12 +35,11 @@ function Button({
     <button
       className={css`
         border: none;
-        box-shadow: ${shadows.shadowLight};
+        box-shadow: ${shadows.inset};
         cursor: pointer;
         border-radius: 2px;
         transition: all 0.2s;
-        font-weight: inherit;
-        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         display: flex;
         align-items: center;
         justify-content: center;
