@@ -30,6 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "docz": "^0.12.12",
     "prettier": "1.15.2"
   }
 }
