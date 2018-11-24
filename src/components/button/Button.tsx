@@ -1,13 +1,15 @@
 import React from 'react'
-import { css } from 'emotion'
+import { css, cx } from 'emotion'
 import { darken } from 'polished'
-import { colors } from '../../utils/colors';
-import { shadows } from '../../utils/shadows';
+import { colors } from '../../utils/colors'
+import BouncingSpinner from '../bouncingSpinner/BouncingSpinner'
 
 interface Props {
   size: 'small' | 'medium' | 'large'
-  intent: 'none' | 'primary' | 'success' | 'warning' | 'danger'
+  intent?: 'primary' | 'success' | 'warning' | 'danger'
   fluid?: boolean
+  minimal?: boolean
+  loading?: boolean
   children: React.ReactNode
 }
 
@@ -15,60 +17,97 @@ function Button({
   size,
   intent,
   fluid,
+  minimal,
+  loading,
   children,
+  className,
+  ...rest
 }: Props & React.HTMLProps<HTMLButtonElement>) {
+  const intentColor = intent ? colors[intent] : colors.default
   const sizes = {
     small: css`
       padding: 0.4rem 0.8rem;
+      min-height: 3rem;
       font-size: 1.4rem;
     `,
     medium: css`
       padding: 0.8rem 1.2rem;
+      min-height: 4rem;
       font-size: 1.6rem;
     `,
     large: css`
       padding: 1.2rem 1.6rem;
+      min-height: 5rem;
       font-size: 1.8rem;
     `,
   }
+  const minimalStyle = css`
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid ${intentColor};
+    &:hover:enabled,
+    &:focus:enabled {
+      border-color: ${darken(0.1, intentColor)};
+      background-color: transparent;
+    }
+    &:active:enabled,
+    &:target:enabled {
+      border-color: ${darken(0.2, intentColor)};
+      background-color: transparent;
+    }
+  `
   return (
     <button
-      className={css`
+      className={cx(
+        css`
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         border: none;
-        box-shadow: ${shadows.inset};
         cursor: pointer;
         border-radius: 2px;
         transition: all 0.2s;
         font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         &:disabled {
           cursor: default;
           opacity: 0.45;
         }
-        background-color: ${colors[intent]};
+        background-color: ${intentColor};
         &:hover:enabled,
         &:focus:enabled {
-          background-color: ${darken(0.05, colors[intent])};
+          background-color: ${darken(0.035, intentColor)};
+          outline: none;
         }
         &:active:enabled,
         &:target:enabled {
-          background-color: ${darken(0.1, colors[intent])};
+          background-color: ${darken(0.07, intentColor)};
+          outline: none;
+        }
+        *:not(:last-child) {
+          margin-right: .7rem;
         }
         ${sizes[size]}
-        color: ${intent !== 'none' && 'white'};
+        color: ${intent && 'white'};
         width: ${fluid && '100%'};
-      `}
+        ${minimal && minimalStyle}
+      `,
+        className
+      )}
+      disabled={loading}
+      {...rest}
     >
-      {children}
+      {loading ? (
+        <BouncingSpinner size={size === 'small' ? 0.5 : 0.8} sizeUnit="rem" />
+      ) : (
+        children
+      )}
     </button>
   )
 }
 
 Button.defaultProps = {
   size: 'medium',
-  intent: 'none',
 }
 
 export default Button
