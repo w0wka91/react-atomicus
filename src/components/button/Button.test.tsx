@@ -18,3 +18,10 @@ it('should append the passed className', () => {
   )
   expect(getByText('Hello')).toHaveClass('customizedButton')
 })
+
+it('should be disabled when in loading state', () => {
+  const { getByText, rerender } = render(<Button>Loading Button</Button>)
+  const loadingBtn = getByText('Loading Button')
+  rerender(<Button loading>Loading Button</Button>)
+  expect(loadingBtn).toBeDisabled()
+})
