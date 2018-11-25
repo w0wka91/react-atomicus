@@ -1,6 +1,6 @@
 import React from 'react'
 import { css, cx } from 'emotion'
-import { darken } from 'polished'
+import { darken, transparentize } from 'polished'
 import { colors } from '../../utils/colors'
 import BouncingSpinner from '../bouncingSpinner/BouncingSpinner'
 
@@ -44,15 +44,15 @@ function Button({
   const minimalStyle = css`
     color: inherit;
     background-color: transparent;
-    border: 1px solid ${intentColor};
+    border: 1px solid ${transparentize(0.4, intentColor)};
     &:hover:enabled,
     &:focus:enabled {
-      border-color: ${darken(0.1, intentColor)};
+      border-color: ${transparentize(0.1, intentColor)};
       background-color: transparent;
     }
     &:active:enabled,
     &:target:enabled {
-      border-color: ${darken(0.2, intentColor)};
+      border-color: ${intentColor};
       background-color: transparent;
     }
   `
