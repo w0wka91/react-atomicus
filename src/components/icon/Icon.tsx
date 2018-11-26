@@ -5,7 +5,7 @@ import { cx, css } from 'emotion'
 interface Props {
   name: string
   color?: string
-  size?: number
+  size?: string
   fill?: string
 }
 
@@ -15,14 +15,14 @@ function Icon({
   size,
   fill,
   className,
-}: Props & React.HTMLProps<SVGElement>) {
+}: React.HTMLProps<SVGElement> & Props) {
   return (
     <svg
       className={cx(
         css`
-          width: ${size ? size : '1em'};
-          height: ${size ? size : '1em'};
-          stroke: ${color ? color : 'currentColor'};
+          width: ${size};
+          height: ${size};
+          stroke: ${color};
           stroke-width: 2px;
           stroke-linecap: round;
           stroke-linejoin: round;
@@ -34,6 +34,11 @@ function Icon({
       <use xlinkHref={`${featherSprite}#${name}`} />
     </svg>
   )
+}
+
+Icon.defaultProps = {
+  size: '1em',
+  color: 'currentColor',
 }
 
 export default Icon
