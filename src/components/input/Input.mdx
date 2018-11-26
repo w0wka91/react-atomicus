@@ -1,0 +1,59 @@
+---
+name: Input
+---
+
+import { Playground } from 'docz'
+import Input from './Input'
+
+# Input
+
+A standard input
+
+<Playground>
+  <Input placeholder="Search..." />
+</Playground>
+
+## Label
+
+An input can be labeled
+
+<Playground>
+  <Input label="Username" placeholder="Search..." />
+</Playground>
+
+## Icon
+
+An input can have an icon on either side
+
+<Playground>
+  <Input label="Username" placeholder="w0wka91" iconLeft="user" />
+  <Input label="E-Mail" placeholder="w0wka91@gmail.com" iconRight="at-sign" />
+</Playground>
+
+## Fluid
+
+A fluid input takes the width of its container
+
+<Playground>
+  <Input placeholder="Search..." fluid />
+</Playground>
+
+## States
+
+A input can have different states
+
+### Disabled
+
+<Playground>
+  <Input placeholder="Disabled..." disabled />
+</Playground>
+
+### Error
+
+<Playground>
+  <Input
+    label="Username"
+    placeholder="w0wka91"
+    error="The username is required"
+  />
+</Playground>

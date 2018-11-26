@@ -7,15 +7,10 @@ interface Props {
   color?: string
   size?: string
   fill?: string
+  className?: string
 }
 
-function Icon({
-  name,
-  color,
-  size,
-  fill,
-  className,
-}: React.HTMLProps<SVGElement> & Props) {
+function Icon({ name, color, size, fill, className }: Props) {
   return (
     <svg
       className={cx(
