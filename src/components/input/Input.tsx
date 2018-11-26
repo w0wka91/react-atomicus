@@ -7,6 +7,7 @@ import Label from '../label/Label'
 import Icon from '../icon/Icon'
 import generateId from '../../utils/generateId'
 import ErrorMessage from '../errorMessage/ErrorMessage'
+import { borders } from '../../utils/borders'
 
 interface Props {
   label?: string
@@ -59,13 +60,14 @@ function Input({
             padding: 1.1rem 1.5rem;
             padding-left: ${iconLeft && '3.5rem'};
             padding-right: ${iconRight && '3.5rem'};
-            border-radius: 3px;
+            border-radius: ${borders.radius};
             font-family: inherit;
             width: 100%;
             color: inherit;
             box-shadow: ${shadows.inset};
-            border: 1px solid
-              ${error ? colors.danger : darken(0.1, colors.default)};
+            border: ${error
+              ? borders.default(colors.danger)
+              : borders.default()};
             &:focus {
               outline: none;
               border-color: ${transparentize(0.4, colors.primary)};
