@@ -1,0 +1,27 @@
+---
+name: Modal
+---
+
+import { Playground } from 'docz'
+import Button from '../button/Button'
+import Modal from './Modal'
+import useToggle from '../../hooks/useToggle'
+
+# Modal
+
+<Playground>
+  {() => {
+    const [toggleValue, toggle] = useToggle(false)
+    return (
+      <>
+        <Modal open={toggleValue} onClose={toggle} >
+          <Modal.Header>Header-Title</Modal.Header>
+          <Modal.Content>huhu</Modal.Content>
+        </Modal>
+        <Button onClick={toggle}>Show Modal</Button>
+      </>
+    )
+
+}}
+
+</Playground>
