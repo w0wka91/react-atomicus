@@ -3,9 +3,11 @@ name: Modal
 ---
 
 import { Playground } from 'docz'
+import { css } from 'emotion'
 import Button from '../button/Button'
 import Modal from './Modal'
 import useToggle from '../../hooks/useToggle'
+import rachel from './rachel.png'
 
 # Modal
 
@@ -15,12 +17,22 @@ import useToggle from '../../hooks/useToggle'
     return (
       <>
         <Modal open={toggleValue} onClose={toggle} >
-          <Modal.Header>Header-Title</Modal.Header>
-          <Modal.Content>huhu</Modal.Content>
+          <Modal.Header>Select a Photo</Modal.Header>
+          <Modal.Content style={{display: 'flex'}}>
+            <img src={rachel} width={300} height={300} />
+            <div>
+              <h3>Default profile image</h3>
+              <p style={{width: '55rem'}}>We've found the following gravatar image associated with your e-mail address.</p>
+              <p style={{paddingTop: '1rem'}}>Is it okay to use this photo?</p>
+            </div>
+          </Modal.Content>
+          <Modal.Footer>
+            <Button intent="success">Yep, that's me</Button>
+          </Modal.Footer>
         </Modal>
         <Button onClick={toggle}>Show Modal</Button>
-      </>
-    )
+        </>
+)
 
 }}
 
