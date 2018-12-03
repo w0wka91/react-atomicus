@@ -7,7 +7,7 @@ import { colors } from '../../utils/colors'
 interface Props {
   open: boolean
   onClose: () => void
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const ModalContext = createContext({
@@ -120,6 +120,7 @@ Modal.Header = ({
           margin-left: auto;
         `}
         onClick={modalContext.onClose}
+        title="close"
       >
         &times;
       </a>
