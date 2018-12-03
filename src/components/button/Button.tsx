@@ -68,7 +68,7 @@ function Button({
         cursor: pointer;
         border-radius: ${borders.radius};
         transition: all 0.2s;
-        font-weight: 500;
+        font-weight: ${intent ? '600' : '500'};
         &:disabled {
           cursor: default;
           opacity: 0.45;
