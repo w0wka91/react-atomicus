@@ -55,13 +55,15 @@ function Modal({
           onClick={e => e.stopPropagation()}
           className={cx(
             css`
+              max-height: 95vh;
+              max-width: 70vw;
+              overflow: hidden;
               background-color: #fff;
               display: flex;
               flex-direction: column;
               min-width: 30rem;
               border-radius: ${borders.radius};
               box-shadow: ${shadows.light};
-              overflow: hidden;
               opacity: 1;
               z-index: 3000;
               opacity: ${open ? 1 : 0};
@@ -94,6 +96,7 @@ Modal.Header = ({
           justify-content: center;
           align-items: center;
           padding: 1.8rem;
+          flex-shrink: 0;
           width: 100%;
           background: ${colors.default};
         `,
@@ -138,6 +141,7 @@ Modal.Content = ({
       className={cx(
         css`
           padding: 1.8rem;
+          overflow: auto;
         `,
         className
       )}
