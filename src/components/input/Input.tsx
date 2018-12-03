@@ -34,7 +34,6 @@ function Input({
     left: ${iconLeft && '1rem'};
     right: ${iconRight && '1rem'};
     top: ${label ? '3.1rem' : '.7rem'};
-    margin-right: ${icon && '1rem'};
   `
   return (
     <div
