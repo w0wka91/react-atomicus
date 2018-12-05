@@ -4,6 +4,7 @@ import { darken, transparentize } from 'polished'
 import { colors } from '../../utils/colors'
 import BouncingSpinner from '../bouncingSpinner/BouncingSpinner'
 import { borders } from '../../utils/borders'
+import Icon from '../icon/Icon'
 
 interface Props {
   size: 'small' | 'medium' | 'large'
@@ -84,7 +85,7 @@ function Button({
           background-color: ${darken(0.07, intentColor)};
           outline: none;
         }
-        *:not(:last-child) {
+        *:first-child {
           margin-right: .7rem;
         }
         ${sizes[size]}
@@ -105,6 +106,12 @@ function Button({
     </button>
   )
 }
+
+interface ButtonIconProps {
+  name: string
+}
+
+Button.Icon = ({ name }: ButtonIconProps) => <Icon size="1em" name={name} />
 
 Button.defaultProps = {
   size: 'medium',
