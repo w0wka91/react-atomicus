@@ -69,7 +69,8 @@ function Button({
         cursor: pointer;
         border-radius: ${borders.radius};
         transition: all 0.2s;
-        font-weight: ${intent ? '600' : '500'};
+        font-weight: 600;
+        color: ${darken(0.6, colors.default)};
         &:disabled {
           cursor: default;
           opacity: 0.45;
@@ -85,8 +86,8 @@ function Button({
           background-color: ${darken(0.07, intentColor)};
           outline: none;
         }
-        *:first-child {
-          margin-right: .7rem;
+        *:not(:last-child) {
+          margin-right: .5rem;
         }
         ${sizes[size]}
         color: ${intent && 'white'};
@@ -111,7 +112,15 @@ interface ButtonIconProps {
   name: string
 }
 
-Button.Icon = ({ name }: ButtonIconProps) => <Icon size="1em" name={name} />
+Button.Icon = ({ name }: ButtonIconProps) => (
+  <Icon
+    size="1em"
+    name={name}
+    className={css`
+      stroke-width: 3px;
+    `}
+  />
+)
 
 Button.defaultProps = {
   size: 'medium',
