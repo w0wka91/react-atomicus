@@ -4,6 +4,7 @@ name: Button
 
 import { Playground } from 'docz'
 import Button from './Button'
+import useToggle from '../../hooks/useToggle'
 
 # Button
 
@@ -76,6 +77,21 @@ A button can have different states
 
 ### Loading
 
+A button can show a loading indicator
+
 <Playground>
-  <Button loading>Loading</Button>
+  {() => {
+    const [toggleValue, toggle] = useToggle(false)
+    const loadingFunc = () => {
+      toggle()
+      setTimeout(toggle, 2000)
+    }
+    return (
+      <>
+        <Button loading={toggleValue} onClick={loadingFunc}>Click to load ...</Button>
+      </>
+
+)
+}}
+
 </Playground>

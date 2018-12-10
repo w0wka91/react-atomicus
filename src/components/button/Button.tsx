@@ -2,9 +2,9 @@ import React from 'react'
 import { css, cx } from 'emotion'
 import { darken, transparentize } from 'polished'
 import { colors } from '../../utils/colors'
-import BouncingSpinner from '../bouncingSpinner/BouncingSpinner'
 import { borders } from '../../utils/borders'
 import Icon from '../icon/Icon'
+import Spinner from '../spinner/Spinner'
 
 interface Props {
   size: 'small' | 'medium' | 'large'
@@ -99,11 +99,16 @@ function Button({
       disabled={loading}
       {...rest}
     >
-      {loading ? (
-        <BouncingSpinner size={size === 'small' ? 0.5 : 0.8} sizeUnit="rem" />
-      ) : (
-        children
+      {loading && (
+        <Spinner
+          size={1}
+          sizeUnit="em"
+          className={css`
+            margin-right: 1rem;
+          `}
+        />
       )}
+      {children}
     </button>
   )
 }
