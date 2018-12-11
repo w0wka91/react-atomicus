@@ -1,8 +1,8 @@
 export const colors = {
   default: 'hsl(211, 10%, 95%)',
-  primary: 'hsl(211, 75%, 40%)',
+  primary: '#1890ff',
   white: 'hsl(240, 100%, 99%)',
-  success: '#21ba45',
-  warning: 'hsl(30, 70%, 51%)',
-  danger: '#db2828',
+  success: '#52c41a',
+  warning: '#faad14',
+  danger: '#f5222d',
 }
