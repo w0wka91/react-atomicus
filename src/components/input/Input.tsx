@@ -67,9 +67,13 @@ function Input({
             border: ${error
               ? borders.default(colors.danger)
               : borders.default()};
+            &:hover,
             &:focus {
               outline: none;
               border-color: ${transparentize(0.4, colors.primary)};
+            }
+            &:focus {
+              box-shadow: 0 0 0 2px ${transparentize(0.65, colors.primary)};
             }
             &:disabled {
               background: transparent;
