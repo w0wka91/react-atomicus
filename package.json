@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "emotion": "^9.2.12",
+    "emotion": "^10.0.4",
     "polished": "^2.3.1",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2"
@@ -24,17 +24,18 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/jest": "23.3.9",
-    "@types/node": "10.12.9",
-    "@types/react": "16.7.6",
-    "@types/react-dom": "16.0.9",
-    "docz": "^0.12.13",
+    "@types/jest": "23.3.10",
+    "@types/node": "10.12.14",
+    "@types/react": "16.7.17",
+    "@types/react-dom": "16.0.11",
+    "docz": "^0.12.16",
     "jest": "^23.6.0",
-    "jest-dom": "^2.1.1",
-    "prettier": "1.15.2",
+    "jest-dom": "^3.0.0",
+    "npm-check-updates": "^2.15.0",
+    "prettier": "1.15.3",
     "react-scripts": "2.1.1",
-    "react-testing-library": "^5.3.1",
+    "react-testing-library": "^5.3.2",
     "ts-jest": "^23.10.5",
-    "typescript": "^3.2.1"
+    "typescript": "^3.2.2"
   }
 }
