@@ -1,0 +1,48 @@
+---
+name: Breadcrumb
+---
+
+import { Playground } from 'docz'
+import Breadcrumb from './Breadcrumb'
+
+# Breadcrumb
+
+A breadcrumb displays the current location within a hierarchy
+
+<Playground>
+  <Breadcrumb>
+    <Breadcrumb.Item>
+      <span>Home</span>
+    </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      <a href="">Dashboard</a>
+    </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      <a href="">Application List</a>
+    </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      <a href="">My Application</a>
+    </Breadcrumb.Item>
+  </Breadcrumb>
+</Playground>
+
+A breadcrumb can also contain icons
+
+<Playground>
+  <Breadcrumb>
+    <Breadcrumb.Item>
+      <a href="">
+        <Breadcrumb.Icon name="home" />
+      </a>
+    </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      <a href="">
+        <Breadcrumb.Icon name="user" />
+        <span>Dashboard</span>
+      </a>
+    </Breadcrumb.Item>
+    <Breadcrumb.Item>
+      <a href="">My Application</a>
+    </Breadcrumb.Item>
+  </Breadcrumb>
+</Playground>

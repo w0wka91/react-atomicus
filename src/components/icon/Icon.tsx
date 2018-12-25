@@ -2,7 +2,7 @@ import * as React from 'react'
 import featherSprite from './feather-sprite.svg'
 import { cx, css } from 'emotion'
 
-interface Props {
+export interface Props {
   name: string
   color?: string
   size?: string
