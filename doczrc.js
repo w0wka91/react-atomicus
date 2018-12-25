@@ -7,10 +7,10 @@ module.exports = {
       playground: {
         display: 'flex',
         alignItems: 'center',
-        '*:not(:last-child)': {
-          marginRight: '1rem'
-        }
-      }
-    }
-  }
+        '> *:not(:last-child)': {
+          marginRight: '1rem',
+        },
+      },
+    },
+  },
 }
