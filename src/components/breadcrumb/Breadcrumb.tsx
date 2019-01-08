@@ -20,7 +20,7 @@ function Breadcrumb({
         display: flex;
         align-items: center;  
         justify-content: center;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         & > *:not(:last-child) {
           color: ${darken(0.3, colors.default)};
           &::after {

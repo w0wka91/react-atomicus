@@ -30,17 +30,17 @@ function Button({
     small: css`
       padding: 0.4rem 0.8rem;
       min-height: 3rem;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     `,
     medium: css`
       padding: 0.8rem 1.2rem;
       min-height: 4rem;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     `,
     large: css`
       padding: 1.2rem 1.6rem;
       min-height: 5rem;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     `,
   }
   const minimalStyle = css`
