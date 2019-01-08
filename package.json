@@ -24,11 +24,12 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@hbetts/parse-repository-url": "^2.1.2",
     "@types/jest": "23.3.10",
     "@types/node": "10.12.18",
     "@types/react": "16.7.18",
     "@types/react-dom": "16.0.11",
-    "docz": "^0.13.5",
+    "docz": "^0.13.7",
     "docz-theme-default": "^0.13.5",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
