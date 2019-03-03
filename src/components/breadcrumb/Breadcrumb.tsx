@@ -21,8 +21,9 @@ function Breadcrumb({
         align-items: center;  
         justify-content: center;
         font-size: 1.4rem;
+        color: ${colors.green900};
         & > *:not(:last-child) {
-          color: ${darken(0.3, colors.default)};
+          color: ${colors.grey200};
           &::after {
             content: '${seperator}';
             padding: 0 0.8rem;
@@ -36,7 +37,7 @@ function Breadcrumb({
             transition: all 0.2s;
           }
           a:hover {
-            color: ${colors.primary};
+            color: ${colors.grey900};
           }
         }
         & > *:last-child {
