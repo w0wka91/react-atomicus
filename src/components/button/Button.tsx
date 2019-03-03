@@ -111,12 +111,6 @@ function Button({
           : 'transparent',
     },
   }
-  const btnBorderColor = {
-    primary: colors.blue600,
-    success: colors.green700,
-    danger: colors.red700,
-    warning: colors.yellow700,
-  }
   const fontColor = {
     primary: colors.blue500,
     success: colors.green500,
@@ -131,13 +125,11 @@ function Button({
         align-items: center;
         justify-content: center;
         text-align: center;
-        border: 1px solid ${
-          hierarchy === 'primary' ? btnBorderColor[intent] : 'transparent'
-        };
+        border: none;
         cursor: pointer;
         border-radius: 3px;
         transition: all 0.2s;
-        box-shadow: ${hierarchy === 'primary' && shadows.light};
+        box-shadow: ${hierarchy === 'primary' && shadows[1]};
         &:disabled {
           cursor: default;
           opacity: 0.45;
@@ -152,7 +144,7 @@ function Button({
         }
         &:active:enabled,
         &:target:enabled {
-          border-color: ${btnColor.active[intent]};
+          box-shadow: ${hierarchy === 'primary' && shadows[0]};
           outline: transparent;
         }
         *:not(:last-child) {
