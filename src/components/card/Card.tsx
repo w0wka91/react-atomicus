@@ -2,6 +2,7 @@ import React from 'react'
 import { css, cx } from 'emotion'
 import { borders } from '../../utils/borders'
 import { shadows } from '../../utils/shadows'
+import { colors } from '../../utils/colors'
 
 interface Props {
   children: React.ReactNode
@@ -16,10 +17,10 @@ function Card({
       className={cx(
         css`
           border-radius: ${borders.radius};
-          border: ${borders.default()};
-          min-width: 30rem;
+          border: 1px solid ${colors.grey100};
+          min-width: 38.4rem;
           overflow: hidden;
-          box-shadow: ${shadows.light};
+          box-shadow: ${shadows[3]};
         `,
         className
       )}
