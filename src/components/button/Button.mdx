@@ -29,6 +29,16 @@ A button can have different types of intent
   <Button intent="danger">Danger</Button>
 </Playground>
 
+## Hierarchy
+
+A button can have a differnt place in the hierarchy
+
+<Playground>
+  <Button hierarchy="primary">Primary</Button>
+  <Button hierarchy="secondary">Secondary</Button>
+  <Button hierarchy="tertiary">Tertiary</Button>
+</Playground>
+
 ## Fluid
 
 A fluid button takes the width of its container
@@ -49,19 +59,9 @@ A button can contain an Icon
     <span>Continue</span>
     <Button.Icon name="arrow-right" />
   </Button>
-  <Button intent="warning">
+  <Button hierarchy="secondary" intent="danger">
     <Button.Icon name="x" />
-    <span>Cancel</span>
-  </Button>
-</Playground>
-
-## Minimal
-
-A minimal button is less pronounced
-
-<Playground>
-  <Button intent="danger" minimal>
-    Minimal
+    <span>Delete</span>
   </Button>
 </Playground>
 
