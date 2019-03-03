@@ -1,5 +1,6 @@
 import React, { LabelHTMLAttributes } from 'react'
 import { css } from 'emotion'
+import { colors } from '../../utils/colors'
 
 interface Props {
   required?: boolean
@@ -19,6 +20,7 @@ function Label({
         font-size: 1.4rem;
         font-weight: 600;
         margin-bottom: 0.1rem;
+        color: ${colors.grey400};
       `}
       {...rest}
     >

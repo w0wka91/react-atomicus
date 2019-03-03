@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { css, cx } from 'emotion'
-import { shadows } from '../../utils/shadows'
+import { shadows, insetShadows } from '../../utils/shadows'
 import { colors } from '../../utils/colors'
 import { transparentize, darken } from 'polished'
 import Label from '../label/Label'
@@ -56,28 +56,28 @@ function Input({
           css`
             display: block;
             font-size: 1.4rem;
-            padding: 1.1rem 1.5rem;
-            padding-left: ${iconLeft && '3.5rem'};
+            padding: 1.2rem 1.6rem;
+            padding-left: ${iconLeft && '3.4rem'};
             padding-right: ${iconRight && '3.5rem'};
-            border-radius: ${borders.radius};
+            border-radius: 3px;
             font-family: inherit;
-            width: 100%;
             color: inherit;
-            box-shadow: ${shadows.inset};
-            border: ${error
-              ? borders.default(colors.danger)
-              : borders.default()};
+            border: 1px solid ${colors.grey100};
+            width: 100%;
+            box-shadow: ${!error
+              ? insetShadows[0]
+              : '0 0 0 2px ' + colors.red200};
             &:hover,
             &:focus {
               outline: none;
-              border-color: ${transparentize(0.4, colors.primary)};
+              border-color: ${colors.blue300};
             }
             &:focus {
-              box-shadow: 0 0 0 2px ${transparentize(0.65, colors.primary)};
+              box-shadow: 0 0 0 2px ${colors.blue100};
             }
             &:disabled {
               background: transparent;
-              border-color: ${transparentize(0.9, colors.primary)};
+              border-color: ${colors.grey100};
             }
           `,
           className
@@ -85,9 +85,7 @@ function Input({
         {...rest}
       />
       <div className={iconPosition}>
-        {icon && (
-          <Icon size="1.6rem" name={icon} color={darken(0.3, colors.default)} />
-        )}
+        {icon && <Icon size="1.6rem" name={icon} color={colors.grey400} />}
       </div>
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </div>

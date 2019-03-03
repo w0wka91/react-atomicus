@@ -11,11 +11,10 @@ function ErrorMessage({ children }: Props) {
     <span
       className={css`
         display: inline-block;
-        font-weight: 500;
         font-size: 1.2rem;
         margin-top: 0.1rem;
         margin-left: 0.4rem;
-        color: ${colors.danger};
+        color: ${colors.red300};
       `}
     >
       {children}
