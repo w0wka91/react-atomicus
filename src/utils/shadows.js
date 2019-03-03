@@ -1,4 +1,7 @@
-export const shadows = {
-  light: '0 1px 3px hsl(0, 0%, 0%, 0.2)',
-  inset: 'inset 0 2px 4px 0 hsl(247, 52%, 12%, 0.03)',
-}
+export const shadows = [
+  '0 1px 3px hsl(0, 0%, 0%, .2)',
+  '0 4px 6px hsl(0, 0%, 0%, .2)',
+  '0 5px 15px hsl(0, 0%, 0%, .2)',
+  '0 10px 24px hsl(0, 0%, 0%, .2)',
+  '0 15px 35px hsl(0, 0%, 0%, .2)',
+]
