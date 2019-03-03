@@ -61,9 +61,9 @@ function Modal({
               background-color: #fff;
               display: flex;
               flex-direction: column;
-              min-width: 30rem;
+              min-width: 32rem;
               border-radius: ${borders.radius};
-              box-shadow: ${shadows.light};
+              box-shadow: ${shadows[4]};
               opacity: 1;
               z-index: 3000;
               opacity: ${open ? 1 : 0};
@@ -98,7 +98,7 @@ Modal.Header = ({
           padding: 1.8rem;
           flex-shrink: 0;
           width: 100%;
-          background: ${colors.default};
+          background: ${colors.grey100};
         `,
         className
       )}
@@ -164,7 +164,7 @@ Modal.Footer = ({
         justify-content: flex-end;
         padding: 1.8rem;
         width: 100%;
-        border-top: ${borders.default()};
+        border-top: 1px solid ${colors.grey100};
       `,
       className
     )}
