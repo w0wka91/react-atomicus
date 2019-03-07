@@ -69,9 +69,8 @@ function Checkbox({
             display: inline-block;
             width: 2rem;
             height: 2rem;
-            border: 1px solid ${colors.grey200};
-            box-shadow: ${insetShadows[0]};
-            transition: all 0.2s;
+            border: 1px solid ${colors.grey300};
+            transition: all 0.2s linear;
           }
         `}
       >

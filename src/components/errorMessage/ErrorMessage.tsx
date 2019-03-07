@@ -14,7 +14,8 @@ function ErrorMessage({ children }: Props) {
         font-size: 1.2rem;
         margin-top: 0.1rem;
         margin-left: 0.4rem;
-        color: ${colors.red300};
+        font-weight: 600;
+        color: ${colors.red700};
       `}
     >
       {children}

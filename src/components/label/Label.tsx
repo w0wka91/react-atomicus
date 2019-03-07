@@ -20,7 +20,7 @@ function Label({
         font-size: 1.4rem;
         font-weight: 600;
         margin-bottom: 0.1rem;
-        color: ${colors.grey400};
+        color: ${colors.grey700};
       `}
       {...rest}
     >

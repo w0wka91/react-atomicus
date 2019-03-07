@@ -62,30 +62,29 @@ function Input({
             border-radius: 3px;
             font-family: inherit;
             color: inherit;
-            border: 1px solid ${colors.grey100};
+            border: 1px solid ${colors.grey300};
             width: 100%;
-            box-shadow: ${!error
-              ? insetShadows[0]
-              : '0 0 0 2px ' + colors.red200};
+            box-shadow: ${error && '0 0 0 2px ' + colors.red300};
             &:hover,
             &:focus {
               outline: none;
               border-color: ${colors.blue300};
             }
             &:focus {
-              box-shadow: 0 0 0 2px ${colors.blue100};
+              box-shadow: 0 0 0 2px ${colors.blue200};
             }
             &:disabled {
               background: transparent;
               border-color: ${colors.grey100};
             }
+            transition: all 0.2s linear;
           `,
           className
         )}
         {...rest}
       />
       <div className={iconPosition}>
-        {icon && <Icon size="1.6rem" name={icon} color={colors.grey400} />}
+        {icon && <Icon size="1.6rem" name={icon} color={colors.grey500} />}
       </div>
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </div>
