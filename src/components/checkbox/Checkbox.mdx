@@ -1,0 +1,29 @@
+---
+name: Checkbox
+---
+
+import { Playground } from 'docz'
+import Checkbox from './Checkbox'
+import useToggle from '../../hooks/useToggle'
+
+# Checkbox
+
+Basic usage of a checkbox component
+
+<Playground>
+  {() => {
+    const [toggleValue, toggle] = useToggle(false)
+    return (
+      <>
+        <Checkbox label="Checkbox" onChange={toggle} checked={toggleValue} />
+      </>
+    )
+}}
+
+</Playground>
+
+## Disabled
+
+<Playground>
+  <Checkbox disabled={true} label="Checkbox" />
+</Playground>

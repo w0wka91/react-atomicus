@@ -6,4 +6,6 @@ export const shadows = [
   '0 15px 35px hsl(0, 0%, 0%, .2)',
 ]
 
-export const insetShadows = ['inset 0px 2px 2px hsl(0, 0%, 0%, 0.1)']
+export const insetShadows = [
+  'inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF',
+]
