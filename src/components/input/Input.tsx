@@ -64,7 +64,7 @@ function Input({
             color: inherit;
             border: 1px solid ${colors.grey300};
             width: 100%;
-            box-shadow: ${error && '0 0 0 2px ' + colors.red300};
+            box-shadow: ${error && '0 0 0 1px ' + colors.red300};
             &:hover,
             &:focus {
               outline: none;

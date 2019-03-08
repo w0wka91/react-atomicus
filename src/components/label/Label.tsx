@@ -16,7 +16,6 @@ function Label({
     <label
       className={css`
         display: inline-block;
-        margin-left: 0.4rem;
         font-size: 1.4rem;
         font-weight: 600;
         margin-bottom: 0.1rem;
