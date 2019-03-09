@@ -129,7 +129,7 @@ function Button({
         cursor: pointer;
         border-radius: 3px;
         transition: all 0.2s;
-        box-shadow: ${hierarchy === 'primary' && shadows[1]};
+        box-shadow: ${hierarchy === 'primary' && shadows[0]};
         &:disabled {
           cursor: default;
           opacity: 0.45;
