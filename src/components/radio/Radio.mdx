@@ -1,0 +1,26 @@
+---
+name: Radio
+---
+
+import { Playground } from 'docz'
+import Radio from './Radio'
+import useToggle from '../../hooks/useToggle'
+
+# Checkbox
+
+Basic usage of a radio component
+
+<Playground>
+  {() => {
+    const [toggleValue, toggle] = useToggle(false)
+    return (
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        <p>Select a maintenance drone:</p>
+        <Radio value="1" name="drone" label="Huey" /> 
+        <Radio value="2" name="drone" label="Dewey" />
+        <Radio value="3" name="drone" label="Louie" />
+      </div>
+    )
+}}
+
+</Playground>
