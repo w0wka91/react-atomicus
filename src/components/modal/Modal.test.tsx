@@ -1,6 +1,6 @@
 import React from 'react'
 import 'jest-dom/extend-expect'
-import { render, cleanup, fireEvent, flushEffects } from 'react-testing-library'
+import { render, cleanup, fireEvent } from 'react-testing-library'
 import Modal from './Modal'
 
 afterEach(cleanup)
@@ -80,7 +80,6 @@ it('should be hidden on esc keydown', () => {
   )
   const modal = getByTestId('modal')
   expect(modal).toBeVisible()
-  flushEffects()
   fireEvent.keyDown(modal, { keyCode: 27, which: 27 })
   expect(toggle).toBeCalledTimes(1)
   rerender(
