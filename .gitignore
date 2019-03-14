@@ -10,6 +10,7 @@
 
 # production
 /build
+.rpt2_cache
 
 # misc
 .DS_Store

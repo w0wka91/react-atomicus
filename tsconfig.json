@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "allowJs": true,
+    // "allowJs": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "build/types",
+    "outDir": "build/lib",
     "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -10,16 +14,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ]
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
