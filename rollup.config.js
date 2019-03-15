@@ -1,7 +1,7 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
-import typescript from 'rollup-plugin-typescript'
+import typescript from 'rollup-plugin-typescript2'
 import svg from 'rollup-plugin-svg'
 
 import pkg from './package.json'
@@ -22,11 +22,21 @@ export default {
   ],
   external: ['react', 'react-dom', 'emotion'],
   plugins: [
-    typescript(),
+    typescript({
+      tsconfigOverride: {
+        compilerOptions: {
+          isolatedModules: false,
+          declaration: true,
+          jsx: 'react',
+        },
+      },
+    }),
+
     svg(),
     babel({
       exclude: 'node_modules/**',
     }),
+
     resolve(),
     commonjs(),
   ],
