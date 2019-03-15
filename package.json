@@ -2,7 +2,7 @@
   "name": "react-atoms",
   "main": "build/react-atoms.umd.js",
   "module": "build/react-atoms.es5.js",
-  "typings": "build/types/react-atoms.d.ts",
+  "typings": "build/types/index.d.ts",
   "author": "Waldemar Penner",
   "repository": {
     "type": "git",
@@ -17,10 +17,9 @@
     "react-dom": "^16.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "cross-env CI=1 react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "docz dev",
+    "build": "rollup -c rollup.config.js",
+    "test": "cross-env CI=1 react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
