@@ -14,6 +14,7 @@ interface Props {
   iconLeft?: string
   iconRight?: string
   error?: string
+  valid?: boolean
   fluid?: boolean
 }
 
@@ -22,6 +23,7 @@ function Input({
   iconLeft,
   iconRight,
   error,
+  valid,
   required,
   fluid,
   className,
@@ -33,6 +35,11 @@ function Input({
     position: absolute;
     left: ${iconLeft && '1rem'};
     right: ${iconRight && '1rem'};
+    top: ${label ? '3.1rem' : '.7rem'};
+  `
+  const validationIcon = css`
+    position: absolute;
+    right: 1rem;
     top: ${label ? '3.1rem' : '.7rem'};
   `
   return (
@@ -62,9 +69,13 @@ function Input({
             border-radius: 3px;
             font-family: inherit;
             color: inherit;
-            border: 1px solid ${colors.grey300};
+            border: 1px solid
+              ${error
+                ? colors.red500
+                : valid
+                ? colors.green500
+                : colors.grey300};
             width: 100%;
-            box-shadow: ${error && '0 0 0 1px ' + colors.red300};
             &:hover,
             &:focus {
               outline: none;
@@ -83,9 +94,21 @@ function Input({
         )}
         {...rest}
       />
-      <div className={iconPosition}>
-        {icon && <Icon size="1.6rem" name={icon} color={colors.grey500} />}
-      </div>
+      {icon && !error && !valid ? (
+        <div className={iconPosition}>
+          <Icon size="1.6rem" name={icon} color={colors.grey500} />
+        </div>
+      ) : null}
+      {error || valid ? (
+        <div className={validationIcon}>
+          {error && (
+            <Icon size="1.6rem" name="alert-circle" color={colors.red500} />
+          )}
+          {valid && (
+            <Icon size="1.6rem" name="check-circle" color={colors.green500} />
+          )}
+        </div>
+      ) : null}
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </div>
   )

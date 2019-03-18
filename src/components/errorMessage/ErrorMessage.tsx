@@ -12,8 +12,8 @@ function ErrorMessage({ children }: Props) {
       className={css`
         display: inline-block;
         font-size: 1.2rem;
-        margin-top: 0.1rem;
-        color: ${colors.red700};
+        font-style: italic;
+        color: ${colors.red500};
       `}
     >
       {children}
