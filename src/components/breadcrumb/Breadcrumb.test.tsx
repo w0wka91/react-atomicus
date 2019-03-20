@@ -8,7 +8,10 @@ afterEach(cleanup)
 it('should append the passed className', () => {
   const { getByTestId } = render(
     <Breadcrumb data-testid="breadcrumb" className="customizedBreadcrumb">
-      <Breadcrumb.Item>Home</Breadcrumb.Item>
+      <Breadcrumb.Item>
+        <Breadcrumb.Icon name="home" />
+        <span>Dashboard</span>
+      </Breadcrumb.Item>
       <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
       <Breadcrumb.Item>Apps</Breadcrumb.Item>
     </Breadcrumb>

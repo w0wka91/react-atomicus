@@ -5,6 +5,26 @@ import Button from './Button'
 
 afterEach(cleanup)
 
+it('should render secondary button', () => {
+  const { getByText } = render(<Button hierarchy="secondary">Secondary</Button>)
+  expect(getByText('Secondary')).toBeInTheDocument()
+})
+
+it('should render tertiary button', () => {
+  const { getByText } = render(<Button hierarchy="tertiary">Tertiary</Button>)
+  expect(getByText('Tertiary')).toBeInTheDocument()
+})
+
+it('should render button with icon', () => {
+  const { getByText } = render(
+    <Button hierarchy="secondary" intent="danger">
+      <Button.Icon name="x" />
+      <span>Delete</span>
+    </Button>
+  )
+  expect(getByText('Delete')).toBeInTheDocument()
+})
+
 it('should execute the passed function', () => {
   const func = jest.fn()
   const { getByText } = render(<Button onClick={func}>Load Greeting</Button>)
