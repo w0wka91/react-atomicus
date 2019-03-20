@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from 'emotion'
 import { colors } from '../../utils/colors'
+import { borders } from '../../utils/borders'
 
 interface Props {
   title?: string
@@ -42,7 +43,7 @@ function Alert({
         font-size: 1.4rem;
         display: flex;
         flex-direction: column;
-        border-radius: 3px;
+        border-radius: ${borders.radius};
         color: ${alertColors[intent].color};
         background-color: ${alertColors[intent].background};
         border-left: 4px solid ${alertColors[intent].border};

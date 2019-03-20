@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { css, cx } from 'emotion'
-import { shadows, insetShadows } from '../../utils/shadows'
 import { colors } from '../../utils/colors'
-import { transparentize, darken } from 'polished'
 import Label from '../label/Label'
 import Icon from '../icon/Icon'
 import generateId from '../../utils/generateId'
@@ -66,7 +64,7 @@ function Input({
             padding: 1.2rem 1.6rem;
             padding-left: ${iconLeft && '3.4rem'};
             padding-right: ${iconRight && '3.5rem'};
-            border-radius: 3px;
+            border-radius: ${borders.radius};
             font-family: inherit;
             color: inherit;
             border: 1px solid

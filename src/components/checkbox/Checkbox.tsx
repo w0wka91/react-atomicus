@@ -3,6 +3,7 @@ import generateId from '../../utils/generateId'
 import { css } from 'emotion'
 import { colors } from '../../utils/colors'
 import { insetShadows } from '../../utils/shadows'
+import { borders } from '../../utils/borders'
 
 interface Props {
   label: string
@@ -65,7 +66,7 @@ function Checkbox({
             content: '';
             margin-right: 1.2rem;
             vertical-align: middle;
-            border-radius: 3px;
+            border-radius: ${borders.radius};
             display: inline-block;
             width: 2rem;
             height: 2rem;

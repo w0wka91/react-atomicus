@@ -4,6 +4,7 @@ import { colors } from '../../utils/colors'
 import Icon from '../icon/Icon'
 import Spinner from '../spinner/Spinner'
 import { shadows } from '../../utils/shadows'
+import { borders } from '../../utils/borders'
 
 interface Props {
   size: 'small' | 'medium' | 'large'
@@ -127,7 +128,7 @@ function Button({
         text-align: center;
         border: none;
         cursor: pointer;
-        border-radius: 3px;
+        border-radius: ${borders.radius};
         transition: all 0.2s;
         box-shadow: ${hierarchy === 'primary' && shadows[0]};
         &:disabled {
