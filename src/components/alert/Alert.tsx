@@ -46,7 +46,7 @@ function Alert({
         color: ${alertColors[intent].color};
         background-color: ${alertColors[intent].background};
         border-left: 4px solid ${alertColors[intent].border};
-        padding: 2.4rem 3.2rem;
+        padding: 1.6rem 2.4rem;
       `}
       {...rest}
     >
