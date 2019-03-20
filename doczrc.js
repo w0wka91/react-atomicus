@@ -17,4 +17,9 @@ module.exports = {
       },
     },
   },
+  modifyBundlerConfig: bundlerConfig => {
+    bundlerConfig.optimization.nodeEnv = 'production'
+    bundlerConfig.optimization.minimize = false
+    return bundlerConfig
+  },
 }
