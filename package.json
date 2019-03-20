@@ -1,12 +1,12 @@
 {
-  "name": "react-atoms",
-  "main": "build/react-atoms.umd.js",
-  "module": "build/react-atoms.es5.js",
+  "name": "react-atomicus",
+  "main": "build/react-atomicus.umd.js",
+  "module": "build/react-atomicus.es5.js",
   "typings": "build/types/index.d.ts",
   "author": "Waldemar Penner",
   "repository": {
     "type": "git",
-    "url": "https://github.com/w0wka91/react-atoms"
+    "url": "https://github.com/w0wka91/react-atomicus"
   },
   "version": "0.1.0",
   "private": true,
