@@ -24,7 +24,8 @@
   },
   "scripts": {
     "start": "docz dev",
-    "build": "rollup -c rollup.config.js",
+    "build": "docz build",
+    "build:lib": "rollup -c rollup.config.js",
     "test": "cross-env CI=1 react-scripts test"
   },
   "eslintConfig": {
