@@ -11,12 +11,14 @@ interface Props {
 
 function Breadcrumb({
   seperator,
+  className,
   children,
   ...rest
 }: Props & React.HTMLProps<HTMLDivElement>) {
   return (
     <div
-      className={css`
+      className={cx(
+        css`
         display: flex;
         align-items: center;  
         justify-content: center;
@@ -48,7 +50,9 @@ function Breadcrumb({
             pointer-events: none;
           }
         }
-      `}
+      `,
+        className
+      )}
       {...rest}
     >
       {children}
