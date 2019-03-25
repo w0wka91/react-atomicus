@@ -107,7 +107,18 @@ function Input({
           )}
         </div>
       ) : null}
-      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {error && (
+        <span
+          className={css`
+            display: inline-block;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: ${colors.red500};
+          `}
+        >
+          {error}
+        </span>
+      )}
     </div>
   )
 }
