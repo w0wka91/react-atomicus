@@ -10,7 +10,7 @@ export interface Props {
   className?: string
 }
 
-function Icon({ name, color, size, fill, className }: Props) {
+function Icon({ name, color, size, fill, className, ...rest }: Props) {
   return (
     <svg
       className={cx(
@@ -25,6 +25,7 @@ function Icon({ name, color, size, fill, className }: Props) {
         `,
         className
       )}
+      {...rest}
     >
       <use xlinkHref={`${featherSprite}#${name}`} />
     </svg>
