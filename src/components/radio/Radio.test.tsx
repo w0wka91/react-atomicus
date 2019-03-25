@@ -17,14 +17,15 @@ it('should render', () => {
 })
 
 it('should execute the passed function', () => {
-  const func = jest.fn()
+  let radioInput: HTMLInputElement
+  const func = jest.fn(evt => (radioInput = evt.target))
   const { getByLabelText } = render(
     <>
       <Radio onChange={func} value="1" name="drone" label="huey" />
       <Radio onChange={func} value="2" name="drone" label="dewey" />
     </>
   )
-  fireEvent.click(getByLabelText('huey'))
   fireEvent.click(getByLabelText('dewey'))
-  expect(func).toHaveBeenCalledTimes(2)
+  expect(radioInput.name).toBe('drone')
+  expect(radioInput.value).toBe('2')
 })
