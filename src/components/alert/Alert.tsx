@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from 'emotion'
+import { css, cx } from 'emotion'
 import { colors } from '../../utils/colors'
 import { borders } from '../../utils/borders'
 
@@ -12,6 +12,7 @@ interface Props {
 function Alert({
   title,
   intent,
+  className,
   children,
   ...rest
 }: Props & React.HTMLProps<HTMLDivElement>) {
@@ -39,16 +40,19 @@ function Alert({
   }
   return (
     <div
-      className={css`
-        font-size: 1.4rem;
-        display: flex;
-        flex-direction: column;
-        border-radius: ${borders.radius};
-        color: ${alertColors[intent].color};
-        background-color: ${alertColors[intent].background};
-        border-left: 4px solid ${alertColors[intent].border};
-        padding: 1.6rem 2.4rem;
-      `}
+      className={cx(
+        css`
+          font-size: 1.4rem;
+          display: flex;
+          flex-direction: column;
+          border-radius: ${borders.radius};
+          color: ${alertColors[intent].color};
+          background-color: ${alertColors[intent].background};
+          border-left: 4px solid ${alertColors[intent].border};
+          padding: 1.6rem 2.4rem;
+        `,
+        className
+      )}
       {...rest}
     >
       <span
