@@ -15,6 +15,15 @@ it('should render tertiary button', () => {
   expect(getByText('Tertiary')).toBeInTheDocument()
 })
 
+it('should render a fluid button', () => {
+  const { getByText } = render(
+    <Button hierarchy="tertiary" fluid={true}>
+      Fluid
+    </Button>
+  )
+  expect(getByText('Fluid')).toBeInTheDocument()
+})
+
 it('should render button with icon', () => {
   const { getByText } = render(
     <Button hierarchy="secondary" intent="danger">
