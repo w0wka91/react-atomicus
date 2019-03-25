@@ -4,7 +4,6 @@ import { colors } from '../../utils/colors'
 import Label from '../label/Label'
 import Icon from '../icon/Icon'
 import generateId from '../../utils/generateId'
-import ErrorMessage from '../errorMessage/ErrorMessage'
 import { borders } from '../../utils/borders'
 
 interface Props {
