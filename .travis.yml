@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - '11.12'
+cache: yarn
+script:
+  - yarn run build:lib
+  - yarn test -- --coverage
+after_success:
+  - echo installing codecov && npx -p codecov@3 -c 'echo running codecov && codecov'
