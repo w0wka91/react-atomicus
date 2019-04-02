@@ -71,7 +71,7 @@ function Input({
                 ? colors.red500
                 : valid
                 ? colors.green500
-                : colors.grey300};
+                : colors.grey200};
             width: 100%;
             &:hover,
             &:focus {
@@ -84,6 +84,9 @@ function Input({
             &:disabled {
               background: transparent;
               border-color: ${colors.grey100};
+            }
+            &::placeholder {
+              color: ${colors.grey300};
             }
             transition: all 0.2s linear;
           `,
