@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import generateId from '../../utils/generateId'
+import React from 'react'
 import { css } from 'emotion'
 import { colors } from '../../utils/colors'
+import { useId } from '../../hooks/useId'
 
 interface Props {
   label: string
 }
 
 function Radio({ label, ...rest }: Props & React.HTMLProps<HTMLInputElement>) {
-  const [id] = useState(generateId(label))
+  const id = useId()
 
   return (
     <>
@@ -21,11 +21,11 @@ function Radio({ label, ...rest }: Props & React.HTMLProps<HTMLInputElement>) {
             opacity: 1;
           }
         `}
-        id={id}
+        id={`radio-${id}`}
         {...rest}
       />
       <label
-        htmlFor={id}
+        htmlFor={`radio-${id}`}
         className={css`
           display: flex;
           align-items: center;

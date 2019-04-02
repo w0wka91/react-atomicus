@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import generateId from '../../utils/generateId'
+import React from 'react'
 import { css } from 'emotion'
 import { colors } from '../../utils/colors'
-import { insetShadows } from '../../utils/shadows'
 import { borders } from '../../utils/borders'
+import { useId } from '../../hooks/useId'
 
 interface Props {
   label: string
@@ -13,7 +12,7 @@ function Checkbox({
   label,
   ...rest
 }: Props & React.HTMLProps<HTMLInputElement>) {
-  const [id] = useState(generateId(label))
+  const id = useId()
   return (
     <div
       className={css`
@@ -22,7 +21,7 @@ function Checkbox({
     >
       <input
         type="checkbox"
-        id={id}
+        id={`checkbox-${id}`}
         className={css`
           position: absolute;
           opacity: 0;
@@ -56,7 +55,7 @@ function Checkbox({
         {...rest}
       />
       <label
-        htmlFor={id}
+        htmlFor={`checkbox-${id}`}
         className={css`
           cursor: pointer;
           color: inherit;

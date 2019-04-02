@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { css, cx } from 'emotion'
 import { colors } from '../../utils/colors'
 import Label from '../label/Label'
 import Icon from '../icon/Icon'
-import generateId from '../../utils/generateId'
 import { borders } from '../../utils/borders'
+import { useId } from '../../hooks/useId'
 
 interface Props {
   label?: string
@@ -26,7 +26,7 @@ function Input({
   className,
   ...rest
 }: Props & React.HTMLProps<HTMLInputElement>) {
-  const [id] = useState(generateId(label))
+  const id = useId()
   const icon = iconLeft ? iconLeft : iconRight
   const iconPosition = css`
     position: absolute;
@@ -50,12 +50,12 @@ function Input({
       `}
     >
       {label && (
-        <Label htmlFor={id} required={required}>
+        <Label htmlFor={`input-${id}`} required={required}>
           {label}
         </Label>
       )}
       <input
-        id={id}
+        id={`input-${id}`}
         className={cx(
           css`
             display: block;
