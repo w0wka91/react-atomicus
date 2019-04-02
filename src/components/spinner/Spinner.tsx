@@ -18,6 +18,7 @@ function Spinner({
   sizeUnit,
   color,
   className,
+  ...rest
 }: Props & React.HTMLProps<HTMLDivElement>) {
   return (
     <div
@@ -31,6 +32,7 @@ function Spinner({
         `,
         className
       )}
+      {...rest}
     >
       <div
         className={css`
