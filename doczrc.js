@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'React Atomicus',
+  title: 'react-atomicus',
   typescript: true,
   wrapper: 'src/DoczWrapper.tsx',
   codeSandbox: false,
