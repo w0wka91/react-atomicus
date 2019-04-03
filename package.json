@@ -17,6 +17,7 @@
     ]
   },
   "dependencies": {
+    "dayjs": "^1.8.12",
     "emotion": "^10.0.7",
     "polished": "^3.0.2",
     "react": "^16.8.3",

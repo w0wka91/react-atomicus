@@ -6,5 +6,16 @@ import Input from './components/input/Input'
 import Modal from './components/modal/Modal'
 import Radio from './components/radio/Radio'
 import Icon from './components/icon/Icon'
+import Calendar from './components/calendar/Calendar'
 
-export { Button, Breadcrumb, Card, Checkbox, Icon, Input, Modal, Radio }
+export {
+  Button,
+  Breadcrumb,
+  Card,
+  Checkbox,
+  Icon,
+  Input,
+  Modal,
+  Radio,
+  Calendar,
+}
