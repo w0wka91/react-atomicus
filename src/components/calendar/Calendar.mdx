@@ -3,12 +3,29 @@ name: Calendar
 ---
 
 import { Playground } from 'docz'
-import Calendar from './Calendar'
+import Calendar, { SelectionType } from './Calendar'
 
 # Calendar
 
-The calendar starting month can be configured
+The start date is adjustable
 
 <Playground>
   <Calendar initDate={new Date(1990, 10)} />
+</Playground>
+
+The selection mode can be either multiple or single
+
+<Playground>
+  <Calendar selectionMode={SelectionType.MULTIPLE} />
+  <Calendar selectionMode={SelectionType.SINGLE} />
+</Playground>
+
+The minimum/maximum date that a user can select can be restricted
+
+<Playground>
+  <Calendar
+    initDate={new Date(2019, 10)}
+    minDate={new Date(2019, 10, 2)}
+    maxDate={new Date(2019, 10, 10)}
+  />
 </Playground>
