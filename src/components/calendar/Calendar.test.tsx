@@ -77,6 +77,7 @@ it('should execute passed function on select in single selection mode', () => {
     />
   )
   fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
+  fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
   expect(onSelect).toHaveBeenCalledTimes(2)
   expect(onSelect).toBeCalledWith(dateInMonth)
 })
