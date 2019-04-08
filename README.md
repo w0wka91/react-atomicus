@@ -8,6 +8,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ab199962-7b9d-407d-8c4c-fec4fe2b48bd/deploy-status)](https://app.netlify.com/sites/react-atomicus/deploys)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 ## [Docz](https://react-atomicus.netlify.com/)
+
 Have a look at the documentation at [react-atomicus](https://react-atomicus.netlify.com/) for more information about using react-atomicus.
+
+## License
+
+MIT

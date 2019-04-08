@@ -1,5 +1,6 @@
 {
   "name": "react-atomicus",
+  "license": "MIT",
   "main": "build/react-atomicus.umd.js",
   "module": "build/react-atomicus.es5.js",
   "typings": "build/typings/index.d.ts",
