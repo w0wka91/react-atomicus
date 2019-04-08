@@ -7,6 +7,7 @@ import Modal from './components/modal/Modal'
 import Radio from './components/radio/Radio'
 import Icon from './components/icon/Icon'
 import Calendar from './components/calendar/Calendar'
+import Normalize from './components/normalize/Normalize'
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   Modal,
   Radio,
   Calendar,
+  Normalize,
 }
