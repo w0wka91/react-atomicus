@@ -1,5 +1,5 @@
 import * as React from 'react'
-import featherSprite from './feather-sprite.svg'
+import featherSprite from 'feather-icons/dist/feather-sprite.svg'
 import { cx, css } from 'emotion'
 
 export interface Props {
