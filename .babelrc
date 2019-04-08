@@ -1,0 +1,16 @@
+{
+  "presets": ["@babel/env", "@babel/typescript", "@babel/react", "minify"],
+  "plugins": [
+    [
+      "emotion",
+      {
+        "sourceMap": false,
+        "autoLabel": false,
+        "labelFormat": "[local]",
+        "cssPropOptimization": true
+      }
+    ],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ]
+}
