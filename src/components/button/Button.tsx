@@ -145,8 +145,7 @@ function Button({
         }
         &:active:enabled,
         &:target:enabled {
-          box-shadow: ${hierarchy === 'primary' && shadows[0]};
-          outline: transparent;
+          transform: scale(0.99);
         }
         *:not(:last-child) {
           margin-right: .4rem;
