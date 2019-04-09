@@ -9,8 +9,7 @@ module.exports = {
     },
     logo: {
       src:
-        'https://raw.githubusercontent.com/w0wka91/react-atomicus/master/react-atomicus-logo.svg?sanitize=true',
-      width: 25,
+        'https://raw.githubusercontent.com/w0wka91/react-atomicus/master/resources/react-atomicus-logo-horizontal.svg?sanitize=true',
     },
     styles: {
       playground: {
