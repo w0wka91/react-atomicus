@@ -1,5 +1,7 @@
 <h1 align="center">
-  react-atomicus
+  <a target="_blank" href="https://react-atomicus.netlify.com/">
+    <img src="https://raw.githubusercontent.com/w0wka91/react-atomicus/master/resources/react-atomicus-logo-vertical.svg?sanitize=true" alt="react-atomicus" title="react-atomicus" width="300">
+  </a>
 </h1>
 <p align="center" style="font-size: 1.2rem;">Yet another library of reusable React components/hooks.</p>
 
