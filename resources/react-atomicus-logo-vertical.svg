@@ -6,8 +6,8 @@
                 <circle id="Oval" stroke="#5F666D" cx="95.5" cy="28.5" r="28.5"></circle>
                 <circle id="Oval" stroke="#5F666D" cx="171.5" cy="25.5" r="21.5"></circle>
                 <circle id="Oval" stroke="#5F666D" cx="88.5" cy="107.5" r="21.5"></circle>
-                <path d="M126.785714,30.1666667 L148.214286,24.6666667" id="Line" stroke="#5F666D" stroke-linecap="square"></path>
-                <path d="M171.5,46 L171.5,69.2142857" id="Line-2" stroke="#5F666D" stroke-linecap="square"></path>
+                <path d="M124,30.5 L150,23.5" id="Line" stroke="#5F666D" stroke-linecap="square"></path>
+                <path d="M171,47 L171.5,71" id="Line-2" stroke="#5F666D" stroke-linecap="square"></path>
                 <circle id="Oval" stroke="#5F666D" cx="171" cy="107" r="36"></circle>
                 <path d="M110,107.5 L135,107.5" id="Line-3" stroke="#5F666D" stroke-linecap="square"></path>
                 <path d="M90.75,86 L96,57.90625" id="Line-4" stroke="#5F666D" stroke-linecap="square"></path>
