@@ -15,6 +15,8 @@ interface Props {
   children: React.ReactNode
 }
 
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+
 function Button({
   size,
   intent,
@@ -24,7 +26,7 @@ function Button({
   children,
   className,
   ...rest
-}: Props & React.HTMLProps<HTMLButtonElement>) {
+}: Omit<React.HTMLProps<HTMLButtonElement>, 'size'> & Props) {
   const btnSize = {
     small: css`
       padding: 0.4rem 0.8rem;
