@@ -20,7 +20,7 @@ function Card({
           border: 1px solid ${colors.grey100};
           min-width: 38.4rem;
           overflow: hidden;
-          box-shadow: ${shadows[3]};
+          box-shadow: ${shadows[2]};
         `,
         className
       )}
