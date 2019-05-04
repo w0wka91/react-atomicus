@@ -21,6 +21,7 @@ function Card({
           min-width: 38.4rem;
           overflow: hidden;
           box-shadow: ${shadows[2]};
+          background: #fff;
         `,
         className
       )}
