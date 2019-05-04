@@ -28,8 +28,9 @@
     "prebuild:lib": "yarn run build:types",
     "build:lib": "rollup -c rollup.config.js",
     "build:types": "tsc --isolatedModules false --declaration true --noEmit false --emitDeclarationOnly",
-    "test": "react-scripts test",
-    "semantic-release": "semantic-release"
+    "test": "react-scripts test --coverage",
+    "semantic-release": "semantic-release",
+    "prepublishOnly": "yarn run build:lib"
   },
   "eslintConfig": {
     "extends": "react-app"
