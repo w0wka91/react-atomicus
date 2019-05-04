@@ -2,8 +2,17 @@ language: node_js
 node_js:
   - '11.12'
 cache: yarn
-script:
-  - yarn run build:lib
-  - yarn test -- --coverage
+jobs:
+  include:
+    - stage: test
+    script: yarn test -- --coverage
+    - stage: deploy
+    script: yarn run build:lib
+    - stage: release
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
 after_success:
   - echo installing codecov && npx -p codecov@3 -c 'echo running codecov && codecov'

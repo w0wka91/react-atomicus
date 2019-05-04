@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/w0wka91/react-atomicus"
   },
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
   "jest": {
     "collectCoverageFrom": [
@@ -28,7 +28,8 @@
     "prebuild:lib": "yarn run build:types",
     "build:lib": "rollup -c rollup.config.js",
     "build:types": "tsc --isolatedModules false --declaration true --noEmit false --emitDeclarationOnly",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -78,7 +79,8 @@
     "rollup-plugin-size-snapshot": "^0.8.0",
     "rollup-plugin-svg": "^1.0.1",
     "ts-jest": "^23.10.5",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "semantic-release": "^15.13.3"
   },
   "resolutions": {
     "@types/react": "16.8.6",
