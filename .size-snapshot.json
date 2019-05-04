@@ -1,20 +1,20 @@
 {
   "build/react-atomicus.umd.js": {
-    "bundled": 151928,
-    "minified": 123497,
-    "gzipped": 30538
+    "bundled": 151889,
+    "minified": 123458,
+    "gzipped": 30536
   },
   "build/react-atomicus.es5.js": {
-    "bundled": 151017,
-    "minified": 122647,
-    "gzipped": 30458,
+    "bundled": 150978,
+    "minified": 122608,
+    "gzipped": 30455,
     "treeshaked": {
       "rollup": {
         "code": 22897,
         "import_statements": 164
       },
       "webpack": {
-        "code": 109763
+        "code": 109730
       }
     }
   }
