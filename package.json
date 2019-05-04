@@ -10,7 +10,6 @@
     "url": "https://github.com/w0wka91/react-atomicus"
   },
   "version": "0.0.0-development",
-  "private": true,
   "jest": {
     "collectCoverageFrom": [
       "src/components/**/*.{tsx}",
