@@ -9,7 +9,6 @@ import Icon from './components/icon/Icon'
 import Calendar from './components/calendar/Calendar'
 import Normalize from './components/normalize/Normalize'
 import { colors } from './utils/colors'
-import generateId from './utils/generateId'
 import { shadows } from './utils/shadows'
 import { sizes } from './utils/sizes'
 import { fontSizes } from './utils/fontSizes'
@@ -27,7 +26,6 @@ export {
   Calendar,
   Normalize,
   colors,
-  generateId,
   shadows,
   sizes,
   fontSizes,
