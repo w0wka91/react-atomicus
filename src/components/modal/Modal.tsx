@@ -24,13 +24,10 @@ function Modal({
   const escFunc = (ev: KeyboardEvent) => {
     if (ev.keyCode === 27) onClose()
   }
-  useEffect(
-    () => {
-      if (open) document.addEventListener('keydown', escFunc, false)
-      return () => document.removeEventListener('keydown', escFunc, false)
-    },
-    [open]
-  )
+  useEffect(() => {
+    if (open) document.addEventListener('keydown', escFunc, false)
+    return () => document.removeEventListener('keydown', escFunc, false)
+  }, [open])
   return (
     <ModalContext.Provider value={{ onClose }}>
       <div
@@ -57,7 +54,6 @@ function Modal({
             css`
               max-height: 95vh;
               max-width: 70vw;
-              overflow: hidden;
               background-color: #fff;
               display: flex;
               flex-direction: column;
@@ -94,6 +90,7 @@ Modal.Header = ({
         css`
           display: flex;
           justify-content: center;
+          border-radius: ${borders.radius};
           align-items: center;
           padding: 1.8rem;
           flex-shrink: 0;
@@ -106,7 +103,6 @@ Modal.Header = ({
     >
       <span
         className={css`
-          font-weight: 600;
           font-size: 2rem;
         `}
       >
@@ -118,6 +114,7 @@ Modal.Header = ({
           color: #000;
           font-size: 3rem;
           text-decoration: none;
+          border-radius: ${borders.radius};
           display: inline-block;
           line-height: 1;
           margin-left: auto;
