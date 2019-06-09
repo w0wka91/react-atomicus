@@ -14,6 +14,8 @@ function Checkbox({
   value,
   checked,
   disabled,
+  onBlur,
+  onFocus,
   ...rest
 }: Props & React.HTMLProps<HTMLInputElement>) {
   const id = useId()
@@ -25,12 +27,11 @@ function Checkbox({
       `}
     >
       <input
+        {...rest}
         type="checkbox"
         id={`checkbox-${id}`}
         checked={checked}
         disabled={disabled}
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
         className={css`
           position: absolute;
           opacity: 0;
@@ -39,7 +40,14 @@ function Checkbox({
             cursor: auto;
           }
         `}
-        {...rest}
+        onFocus={evt => {
+          setFocus(true)
+          if (onFocus) onFocus(evt)
+        }}
+        onBlur={evt => {
+          setFocus(false)
+          if (onBlur) onBlur(evt)
+        }}
       />
       <label
         htmlFor={`checkbox-${id}`}
