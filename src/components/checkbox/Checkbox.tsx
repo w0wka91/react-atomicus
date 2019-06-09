@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { css } from 'emotion'
 import { colors } from '../../utils/colors'
 import { borders } from '../../utils/borders'
@@ -17,6 +17,7 @@ function Checkbox({
   ...rest
 }: Props & React.HTMLProps<HTMLInputElement>) {
   const id = useId()
+  const [focus, setFocus] = useState(false)
   return (
     <div
       className={css`
@@ -28,6 +29,8 @@ function Checkbox({
         id={`checkbox-${id}`}
         checked={checked}
         disabled={disabled}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
         className={css`
           position: absolute;
           opacity: 0;
@@ -58,13 +61,14 @@ function Checkbox({
             border-radius: ${borders.radius};
             width: 2rem;
             height: 2rem;
-            border: 1px solid ${colors.grey300};
+            border: 1px solid ${focus ? colors.blue300 : colors.grey300};
+            box-shadow: ${focus && `0 0 0 2px ${colors.blue200}`};
             background: ${checked && colors.blue500};
             background: ${disabled && colors.grey100};
             transition: all 0.2s linear;
           `}
         >
-          {checked && <Icon size="1.3rem" name="check" color="white" />}
+          {checked && <Icon size="1.2rem" name="check" color="white" />}
         </div>
         {label}
       </label>
