@@ -2,6 +2,7 @@ import React from 'react'
 import { css, cx } from 'emotion'
 import { colors } from '../../utils/colors'
 import Label from '../label/Label'
+import Error from '../error/Error'
 import Icon from '../icon/Icon'
 import { borders } from '../../utils/borders'
 import { useId } from '../../hooks/useId'
@@ -14,6 +15,37 @@ interface Props extends React.HTMLProps<HTMLInputElement> {
   valid?: boolean
   fluid?: boolean
 }
+
+export const inputBaseStyle = (
+  error: string | undefined,
+  valid: boolean | undefined
+) => css`
+  display: block;
+  font-size: 1.4rem;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid
+    ${error ? colors.red500 : valid ? colors.green500 : colors.grey200};
+  border-radius: ${borders.radius};
+  font-family: inherit;
+  color: inherit;
+  width: 100%;
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: ${colors.blue300};
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px ${colors.blue200};
+  }
+  &:disabled {
+    background: transparent;
+    border-color: ${colors.grey100};
+  }
+  &::placeholder {
+    color: ${colors.grey300};
+  }
+  transition: all 0.2s linear;
+`
 
 function Input({
   label,
@@ -58,38 +90,11 @@ function Input({
         id={`input-${id}`}
         className={cx(
           css`
-            display: block;
-            font-size: 1.4rem;
-            padding: 1.2rem 1.6rem;
+            ${inputBaseStyle(error, valid)};
             padding-left: ${iconLeft && '3.4rem'};
             padding-right: ${iconRight && '3.5rem'};
-            border-radius: ${borders.radius};
-            font-family: inherit;
-            color: inherit;
-            border: 1px solid
-              ${error
-                ? colors.red500
-                : valid
-                ? colors.green500
-                : colors.grey200};
-            width: 100%;
-            &:hover,
-            &:focus {
-              outline: none;
-              border-color: ${colors.blue300};
-            }
-            &:focus {
-              box-shadow: 0 0 0 2px ${colors.blue200};
-            }
-            &:disabled {
-              background: transparent;
-              border-color: ${colors.grey100};
-            }
-            &::placeholder {
-              color: ${colors.grey300};
-            }
-            transition: all 0.2s linear;
           `,
+
           className
         )}
         {...rest}
@@ -109,18 +114,7 @@ function Input({
           )}
         </div>
       ) : null}
-      {error && (
-        <span
-          className={css`
-            display: inline-block;
-            font-size: 1.2rem;
-            font-style: italic;
-            color: ${colors.red500};
-          `}
-        >
-          {error}
-        </span>
-      )}
+      {error && <Error>error</Error>}
     </div>
   )
 }
