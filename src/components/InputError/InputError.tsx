@@ -5,7 +5,7 @@ import { colors } from '../../utils/colors'
 interface Props {
   children: React.ReactNode
 }
-function Error({ children }: Props) {
+function InputError({ children }: Props) {
   return (
     <span
       className={css`
@@ -20,4 +20,4 @@ function Error({ children }: Props) {
   )
 }
 
-export default Error
+export default InputError

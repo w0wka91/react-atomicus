@@ -2,10 +2,10 @@ import React from 'react'
 import { css, cx } from 'emotion'
 import { colors } from '../../utils/colors'
 import Label from '../label/Label'
-import Error from '../error/Error'
 import Icon from '../icon/Icon'
 import { borders } from '../../utils/borders'
 import { useId } from '../../hooks/useId'
+import InputError from '../InputError/InputError'
 
 interface Props extends React.HTMLProps<HTMLInputElement> {
   label?: string
@@ -114,7 +114,7 @@ function Input({
           )}
         </div>
       ) : null}
-      {error && <Error>error</Error>}
+      {error && <InputError>{error}</InputError>}
     </div>
   )
 }
