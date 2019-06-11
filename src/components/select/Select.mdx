@@ -1,0 +1,103 @@
+---
+name: Select
+---
+
+import { Playground } from 'docz'
+import Select from './Select'
+
+# Select
+
+A standard select
+
+<Playground>
+  <Select
+    options={[
+      { value: 'NSW', label: 'New South Wales' },
+      { value: 'QLD', label: 'Queensland' },
+      { value: 'SA', label: 'South australia' },
+      { value: 'TAS', label: 'Tasmania' },
+      { value: 'VIC', label: 'Victoria' },
+      { value: 'WA', label: 'Western Australia' },
+    ]}
+    onChange={val => alert(`selected value is: ${val}`)}
+  />
+</Playground>
+
+## Label
+
+A select component can be labeled
+
+<Playground>
+  <Select
+    label="States"
+    options={[
+      { value: 'NSW', label: 'New South Wales' },
+      { value: 'QLD', label: 'Queensland' },
+      { value: 'SA', label: 'South australia' },
+      { value: 'TAS', label: 'Tasmania' },
+      { value: 'VIC', label: 'Victoria' },
+      { value: 'WA', label: 'Western Australia' },
+    ]}
+    onChange={val => alert(`selected value is: ${val}`)}
+  />
+</Playground>
+
+## Fluid
+
+A fluid select component takes the width of its container
+
+<Playground>
+  <Select
+    label="States"
+    fluid
+    options={[
+      { value: 'NSW', label: 'New South Wales' },
+      { value: 'QLD', label: 'Queensland' },
+      { value: 'SA', label: 'South australia' },
+      { value: 'TAS', label: 'Tasmania' },
+      { value: 'VIC', label: 'Victoria' },
+      { value: 'WA', label: 'Western Australia' },
+    ]}
+    onChange={val => alert(`selected value is: ${val}`)}
+  />
+</Playground>
+
+## States
+
+A select component can have different states
+
+### Valid
+
+<Playground>
+  <Select
+    label="States"
+    valid={true}
+    options={[
+      { value: 'NSW', label: 'New South Wales' },
+      { value: 'QLD', label: 'Queensland' },
+      { value: 'SA', label: 'South australia' },
+      { value: 'TAS', label: 'Tasmania' },
+      { value: 'VIC', label: 'Victoria' },
+      { value: 'WA', label: 'Western Australia' },
+    ]}
+    onChange={val => alert(`selected value is: ${val}`)}
+  />
+</Playground>
+
+### Error
+
+<Playground>
+  <Select
+    label="States"
+    error="This field is required"
+    options={[
+      { value: 'NSW', label: 'New South Wales' },
+      { value: 'QLD', label: 'Queensland' },
+      { value: 'SA', label: 'South australia' },
+      { value: 'TAS', label: 'Tasmania' },
+      { value: 'VIC', label: 'Victoria' },
+      { value: 'WA', label: 'Western Australia' },
+    ]}
+    onChange={val => alert(`selected value is: ${val}`)}
+  />
+</Playground>
