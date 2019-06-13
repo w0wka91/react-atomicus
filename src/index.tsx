@@ -8,6 +8,7 @@ import Radio from './components/radio/Radio'
 import Icon from './components/icon/Icon'
 import Calendar from './components/calendar/Calendar'
 import Normalize from './components/normalize/Normalize'
+import Select from './components/select/Select'
 import { colors } from './utils/colors'
 import { shadows } from './utils/shadows'
 import { sizes } from './utils/sizes'
@@ -25,6 +26,7 @@ export {
   Radio,
   Calendar,
   Normalize,
+  Select,
   colors,
   shadows,
   sizes,
