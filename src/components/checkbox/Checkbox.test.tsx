@@ -13,6 +13,7 @@ it('should be checked after render', () => {
 it('should execute the passed function', () => {
   const func = jest.fn()
   const { getByLabelText } = render(<Checkbox onClick={func} label="Test" />)
+  fireEvent.focus(getByLabelText('Test'))
   fireEvent.click(getByLabelText('Test'))
   expect(func).toHaveBeenCalledTimes(1)
 })
