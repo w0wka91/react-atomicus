@@ -125,7 +125,7 @@ function Select({
   return (
     <div
       className={css`
-        min-width: ${fluid ? '100%' : '25.6rem'};
+        width: ${fluid ? '100%' : '25.6rem'};
       `}
     >
       <div
