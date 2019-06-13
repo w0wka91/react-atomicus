@@ -13,7 +13,6 @@ import { inputBaseStyle } from '../input/Input'
 import Label from '../label/Label'
 import { useId } from '../../hooks/useId'
 import InputError from '../InputError/InputError'
-import ReactTestUtils from 'react-dom/test-utils'
 
 interface ContextProps {
   dispatch: Dispatch
@@ -318,16 +317,17 @@ function Option({
   if (context === undefined) {
     throw new Error('useContext must be used within a SelectContext.Provider')
   }
-  const highlightedStyle = css`
-    cursor: pointer;
-    background: ${colors.blue100};
-  `
+
   return (
     <div
       className={css`
         padding: 0.8rem 1.2rem;
         font-size: 1.4rem;
-        ${highlighted && highlightedStyle}
+        ${highlighted &&
+          css`
+            cursor: pointer;
+            background: ${colors.blue100};
+          `}
       `}
       onMouseOver={onMouseOver}
     >
@@ -338,7 +338,7 @@ function Option({
         `}
       >
         <a
-          onMouseDown={() =>
+          onClick={e =>
             context.dispatch({
               type: 'selection-change',
               inputValue: children,
