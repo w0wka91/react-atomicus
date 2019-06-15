@@ -242,6 +242,7 @@ function Select({
             value={state.inputValue}
           />
           <button
+            tabIndex={-1}
             title="show options"
             onClick={() => dispatch({ type: 'unfold' })}
             onMouseOver={() => dispatch({ type: 'mouse-over' })}
