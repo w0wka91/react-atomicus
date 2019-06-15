@@ -242,6 +242,7 @@ function Select({
             value={state.inputValue}
           />
           <button
+            type="button"
             tabIndex={-1}
             title="show options"
             onClick={() => dispatch({ type: 'unfold' })}
