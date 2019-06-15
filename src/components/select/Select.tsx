@@ -60,7 +60,12 @@ type State = {
 function selectReducer(state: State, action: Action) {
   switch (action.type) {
     case 'value-change':
-      return { ...state, inputValue: action.inputValue, collapsed: false }
+      return {
+        ...state,
+        focused: true,
+        inputValue: action.inputValue,
+        collapsed: false,
+      }
     case 'selection-change':
       return {
         ...state,
