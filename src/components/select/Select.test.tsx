@@ -77,3 +77,18 @@ it('should delete the current value on escape', async () => {
   fireEvent.keyDown(getByLabelText('Superheroes'), { keyCode: 27 })
   expect(getByLabelText('Superheroes')).toHaveValue('')
 })
+
+it('should not propogate the keydown event', async () => {
+  const func = jest.fn()
+  const { getByLabelText, container } = render(
+    <Select
+      label="Superheroes"
+      value="Iron Man"
+      options={options}
+      onChange={func}
+    />
+  )
+  container.addEventListener('keydown', func, false)
+  fireEvent.keyDown(getByLabelText('Superheroes'), { keyCode: 27 })
+  expect(func).toBeCalledTimes(0)
+})

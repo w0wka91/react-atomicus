@@ -112,6 +112,60 @@ function Select({
     o.label.toLocaleLowerCase().includes(state.inputValue.toLocaleLowerCase())
   )
   useEffect(() => {
+    const handleKeyDown = (evt: KeyboardEvent) => {
+      evt.stopPropagation()
+      switch (evt.keyCode) {
+        case 40:
+          dispatch({
+            type: 'highlight-option',
+            index:
+              state.collapsed ||
+              filteredOptions.length - 1 === state.highlightedOption
+                ? 0
+                : state.highlightedOption + 1,
+          })
+          break
+        case 38:
+          dispatch({
+            type: 'highlight-option',
+            index:
+              state.highlightedOption === 0
+                ? filteredOptions.length - 1
+                : state.highlightedOption - 1,
+          })
+          break
+        case 27:
+          if (!state.collapsed) {
+            dispatch({
+              type: 'collapse',
+            })
+          } else {
+            dispatch({
+              type: 'value-change',
+              inputValue: '',
+            })
+          }
+          break
+        case 13:
+          if (!state.collapsed) {
+            dispatch({
+              type: 'selection-change',
+              inputValue: filteredOptions[state.highlightedOption].label,
+              selectedKey: filteredOptions[state.highlightedOption].value,
+            })
+          }
+          break
+      }
+    }
+    if (inputRef.current)
+      inputRef.current.addEventListener('keydown', handleKeyDown, false)
+    return () => {
+      if (inputRef.current) {
+        inputRef.current.removeEventListener('keydown', handleKeyDown, false)
+      }
+    }
+  }, [state.highlightedOption, state.collapsed])
+  useEffect(() => {
     if (!state.collapsed && inputRef.current && state.focused)
       inputRef.current.focus()
   }, [state.collapsed])
@@ -121,7 +175,6 @@ function Select({
       inputRef.current.focus()
     }
   }, [state.selectedKey])
-
   return (
     <div
       className={css`
@@ -165,52 +218,6 @@ function Select({
             `}
             id={`input-${id}`}
             ref={inputRef}
-            onKeyDown={evt => {
-              switch (evt.keyCode) {
-                case 40:
-                  dispatch({
-                    type: 'highlight-option',
-                    index:
-                      state.collapsed ||
-                      filteredOptions.length - 1 === state.highlightedOption
-                        ? 0
-                        : state.highlightedOption + 1,
-                  })
-                  break
-                case 38:
-                  dispatch({
-                    type: 'highlight-option',
-                    index:
-                      state.highlightedOption === 0
-                        ? filteredOptions.length - 1
-                        : state.highlightedOption - 1,
-                  })
-                  break
-                case 27:
-                  if (!state.collapsed) {
-                    dispatch({
-                      type: 'collapse',
-                    })
-                  } else {
-                    dispatch({
-                      type: 'value-change',
-                      inputValue: '',
-                    })
-                  }
-                  break
-                case 13:
-                  if (!state.collapsed) {
-                    dispatch({
-                      type: 'selection-change',
-                      inputValue:
-                        filteredOptions[state.highlightedOption].label,
-                      selectedKey:
-                        filteredOptions[state.highlightedOption].value,
-                    })
-                  }
-                  break
-              }
-            }}
             onFocus={evt => {
               dispatch({ type: 'focus' })
               if (onFocus) onFocus(evt)
