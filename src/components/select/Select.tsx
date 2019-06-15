@@ -326,8 +326,18 @@ function Option({
   }
 
   return (
-    <div
+    <a
+      onMouseOver={onMouseOver}
+      onClick={e =>
+        context.dispatch({
+          type: 'selection-change',
+          inputValue: children,
+          selectedKey: value,
+        })
+      }
       className={css`
+        display: block;
+        align-items: center;
         padding: 0.8rem 1.2rem;
         font-size: 1.4rem;
         ${highlighted &&
@@ -336,28 +346,10 @@ function Option({
             background: ${colors.blue100};
           `}
       `}
-      onMouseOver={onMouseOver}
+      title={children}
     >
-      <div
-        className={css`
-          display: flex;
-          align-items: center;
-        `}
-      >
-        <a
-          onClick={e =>
-            context.dispatch({
-              type: 'selection-change',
-              inputValue: children,
-              selectedKey: value,
-            })
-          }
-          title={children}
-        >
-          {<span>{children}</span>}
-        </a>
-      </div>
-    </div>
+      {<span>{children}</span>}
+    </a>
   )
 }
 
