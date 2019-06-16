@@ -92,3 +92,24 @@ it('should not propogate the keydown event', async () => {
   fireEvent.keyDown(getByLabelText('Superheroes'), { keyCode: 27 })
   expect(func).toBeCalledTimes(0)
 })
+
+it('should prevent default if options are not collapsed', async () => {
+  const sumbitFunc = jest.fn()
+  const onChangeFunc = jest.fn()
+  const { getByLabelText } = render(
+    <form onSubmit={sumbitFunc}>
+      <Select
+        label="Superheroes"
+        value="Iron Man"
+        options={options}
+        onChange={onChangeFunc}
+      />
+      <button type="submit">submit</button>
+    </form>
+  )
+  fireEvent.keyDown(getByLabelText('Superheroes'), { keyCode: 27 })
+  fireEvent.keyDown(getByLabelText('Superheroes'), { keyCode: 13 })
+
+  expect(sumbitFunc).toBeCalledTimes(0)
+  expect(onChangeFunc).toBeCalledTimes(1)
+})

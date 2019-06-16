@@ -158,6 +158,7 @@ function Select({
               inputValue: filteredOptions[state.highlightedOption].label,
               selectedKey: filteredOptions[state.highlightedOption].value,
             })
+            evt.preventDefault()
           }
           break
       }
