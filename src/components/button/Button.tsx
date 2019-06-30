@@ -85,7 +85,12 @@ function Button({
           : hierarchy === 'secondary'
           ? colors.red200
           : 'transparent',
-      warning: colors.yellow600,
+      warning:
+        hierarchy === 'primary'
+          ? colors.yellow600
+          : hierarchy === 'secondary'
+          ? colors.yellow200
+          : 'transparent',
     },
     active: {
       primary:
@@ -108,9 +113,9 @@ function Button({
           : 'transparent',
       warning:
         hierarchy === 'primary'
-          ? colors.yellow700
+          ? colors.yellow600
           : hierarchy === 'secondary'
-          ? colors.yellow300
+          ? colors.yellow200
           : 'transparent',
     },
   }
@@ -118,7 +123,7 @@ function Button({
     primary: colors.blue500,
     success: colors.green500,
     danger: colors.red500,
-    warning: colors.yellow500,
+    warning: colors.yellow600,
   }
   return (
     <button

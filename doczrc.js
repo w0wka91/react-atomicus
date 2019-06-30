@@ -12,14 +12,5 @@ module.exports = {
         'https://raw.githubusercontent.com/w0wka91/react-atomicus/master/resources/react-atomicus-logo-horizontal.svg?sanitize=true',
       width: '200',
     },
-    styles: {
-      playground: {
-        display: 'flex',
-        alignItems: 'center',
-        '> *:not(:last-child)': {
-          marginRight: '1rem',
-        },
-      },
-    },
   },
 }

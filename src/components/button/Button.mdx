@@ -4,6 +4,7 @@ name: Button
 
 import { Playground } from 'docz'
 import Button from './Button'
+import ButtonWrapper from '../../docz-utils/ButtonWrapper'
 import useToggle from '../../hooks/useToggle'
 
 # Button
@@ -13,9 +14,11 @@ import useToggle from '../../hooks/useToggle'
 A button can have different sizes
 
 <Playground>
-  <Button size="small">Small </Button>
-  <Button size="medium">Medium</Button>
-  <Button size="large">Large</Button>
+  <ButtonWrapper>
+    <Button size="small">Small </Button>
+    <Button size="medium">Medium</Button>
+    <Button size="large">Large</Button>
+  </ButtonWrapper>
 </Playground>
 
 ## Intent
@@ -23,10 +26,12 @@ A button can have different sizes
 A button can have different types of intent
 
 <Playground>
-  <Button intent="primary">Primary</Button>
-  <Button intent="success">Success</Button>
-  <Button intent="warning">Warning</Button>
-  <Button intent="danger">Danger</Button>
+  <ButtonWrapper>
+    <Button intent="primary">Primary</Button>
+    <Button intent="success">Success</Button>
+    <Button intent="warning">Warning</Button>
+    <Button intent="danger">Danger</Button>
+  </ButtonWrapper>
 </Playground>
 
 ## Hierarchy
@@ -34,9 +39,13 @@ A button can have different types of intent
 A button can have a differnt place in the hierarchy
 
 <Playground>
-  <Button hierarchy="primary">Primary</Button>
-  <Button hierarchy="secondary">Secondary</Button>
-  <Button hierarchy="tertiary">Tertiary</Button>
+  <ButtonWrapper>
+    <Button hierarchy="primary">Primary</Button>
+    <Button intent="warning" hierarchy="secondary">
+      Secondary
+    </Button>
+    <Button hierarchy="tertiary">Tertiary</Button>
+  </ButtonWrapper>
 </Playground>
 
 ## Fluid
@@ -52,17 +61,19 @@ A fluid button takes the width of its container
 A button can contain an Icon
 
 <Playground>
-  <Button>
-    <Button.Icon name="corner-down-left" />
-  </Button>
-  <Button intent="primary">
-    <span>Continue</span>
-    <Button.Icon name="arrow-right" />
-  </Button>
-  <Button hierarchy="secondary" intent="danger">
-    <Button.Icon name="x" />
-    <span>Delete</span>
-  </Button>
+  <ButtonWrapper>
+    <Button>
+      <Button.Icon name="corner-down-left" />
+    </Button>
+    <Button intent="primary">
+      <span>Continue</span>
+      <Button.Icon name="arrow-right" />
+    </Button>
+    <Button hierarchy="secondary" intent="danger">
+      <Button.Icon name="x" />
+      <span>Delete</span>
+    </Button>
+  </ButtonWrapper>
 </Playground>
 
 ## States
