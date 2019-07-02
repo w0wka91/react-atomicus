@@ -95,7 +95,7 @@ function Select({
   options,
   onChange,
   label,
-  value,
+  value = '',
   required,
   error,
   valid,
@@ -104,7 +104,7 @@ function Select({
   onBlur,
 }: SelectProps) {
   const [state, dispatch] = useReducer(selectReducer, {
-    inputValue: value ? value : '',
+    inputValue: value,
     selectedKey: undefined,
     highlightedOption: 0,
     collapsed: true,
@@ -181,6 +181,11 @@ function Select({
       inputRef.current.focus()
     }
   }, [state.selectedKey])
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.value = value
+    }
+  }, [inputRef, value])
   return (
     <div
       className={css`

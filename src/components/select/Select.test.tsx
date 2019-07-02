@@ -1,6 +1,6 @@
-import React from 'react'
+import { cleanup, fireEvent, render } from '@testing-library/react'
 import 'jest-dom/extend-expect'
-import { render, cleanup, fireEvent } from '@testing-library/react'
+import React from 'react'
 import Select from './Select'
 
 afterEach(cleanup)
@@ -23,7 +23,7 @@ it('should represent the passed value', () => {
 
 it('should be selectable by click', async () => {
   const func = jest.fn()
-  const { getByLabelText, getByTitle, rerender } = render(
+  const { getByLabelText, getByTitle } = render(
     <Select label="Superheroes" options={options} onChange={func} />
   )
 
@@ -35,7 +35,7 @@ it('should be selectable by click', async () => {
 
 it('should be selectable with the keyboard', async () => {
   const func = jest.fn()
-  const { getByLabelText, getByTitle, rerender } = render(
+  const { getByLabelText } = render(
     <Select label="Superheroes" options={options} onChange={func} />
   )
 
@@ -50,7 +50,7 @@ it('should be selectable with the keyboard', async () => {
 
 it('should filter the options', async () => {
   const func = jest.fn()
-  const { getByLabelText, getByTitle, rerender } = render(
+  const { getByLabelText } = render(
     <Select label="Superheroes" options={options} onChange={func} />
   )
 
@@ -112,4 +112,12 @@ it('should prevent default if options are not collapsed', async () => {
 
   expect(sumbitFunc).toBeCalledTimes(0)
   expect(onChangeFunc).toBeCalledTimes(1)
+})
+
+it('should change the displayed value on rerender', async () => {
+  const { getByLabelText, rerender } = render(
+    <Select label="Superheroes" value="Test" options={options} />
+  )
+  rerender(<Select label="Superheroes" value="Changed" options={options} />)
+  expect(getByLabelText('Superheroes')).toHaveValue('Changed')
 })
