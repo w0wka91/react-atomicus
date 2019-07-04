@@ -8,11 +8,11 @@ import React, {
 import { css } from 'emotion'
 import Icon from '../icon/Icon'
 import { colors } from '../../utils/colors'
-import { borders } from '../..'
 import { inputBaseStyle } from '../input/Input'
 import Label from '../label/Label'
 import { useId } from '../../hooks/useId'
 import InputError from '../InputError/InputError'
+import { borders } from '../../utils/borders'
 
 interface ContextProps {
   dispatch: Dispatch
