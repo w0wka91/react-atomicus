@@ -15,7 +15,7 @@ export default {
   external: ['react', 'react-dom', 'emotion', 'dayjs'],
 
   plugins: [
-    svg(),
+    svg({ base64: true }),
     // Allows node_modules resolution
     resolve({ extensions }),
 
