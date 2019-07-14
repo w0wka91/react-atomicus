@@ -32,4 +32,4 @@ function Card({
   )
 }
 
-export default Card
+export { Card }

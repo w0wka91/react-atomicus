@@ -1,7 +1,7 @@
-import React from 'react'
+import { cleanup, render } from '@testing-library/react'
 import 'jest-dom/extend-expect'
-import { render, cleanup, fireEvent } from '@testing-library/react'
-import Icon from './Icon'
+import React from 'react'
+import { Icon } from './Icon'
 
 afterEach(cleanup)
 

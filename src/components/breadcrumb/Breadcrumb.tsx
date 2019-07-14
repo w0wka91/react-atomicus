@@ -1,8 +1,7 @@
-import React from 'react'
 import { css, cx } from 'emotion'
+import React from 'react'
 import { colors } from '../../utils/colors'
-import { darken } from 'polished'
-import Icon, { Props as IconProps } from '../icon/Icon'
+import { Icon, Props as IconProps } from '../icon/Icon'
 
 interface Props {
   seperator: string
@@ -85,4 +84,4 @@ Breadcrumb.defaultProps = {
   seperator: '/',
 }
 
-export default Breadcrumb
+export { Breadcrumb }

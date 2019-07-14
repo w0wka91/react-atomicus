@@ -26,4 +26,4 @@ function Normalize() {
   )
 }
 
-export default Normalize
+export { Normalize }

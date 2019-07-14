@@ -67,4 +67,4 @@ function Radio({ label, ...rest }: Props & React.HTMLProps<HTMLInputElement>) {
   )
 }
 
-export default Radio
+export { Radio }

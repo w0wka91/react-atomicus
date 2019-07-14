@@ -174,4 +174,4 @@ Modal.Footer = ({
 Modal.defaultProps = {
   open: false,
 }
-export default Modal
+export { Modal }

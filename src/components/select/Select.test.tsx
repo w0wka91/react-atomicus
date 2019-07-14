@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render } from '@testing-library/react'
 import 'jest-dom/extend-expect'
 import React from 'react'
-import Select from './Select'
+import { Select } from './Select'
 
 afterEach(cleanup)
 

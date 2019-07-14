@@ -61,4 +61,4 @@ Day.defaultProps = {
   disabled: false,
 }
 
-export default Day
+export { Day }

@@ -37,4 +37,4 @@ Icon.defaultProps = {
   color: 'currentColor',
 }
 
-export default Icon
+export { Icon }

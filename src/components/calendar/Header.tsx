@@ -1,5 +1,5 @@
 import React from 'react'
-import Weekday from './Weekday'
+import { Weekday } from './Weekday'
 
 function Header() {
   return (
@@ -15,4 +15,4 @@ function Header() {
   )
 }
 
-export default Header
+export { Header }

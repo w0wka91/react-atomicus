@@ -1,8 +1,8 @@
 import React from 'react'
 import { css, cx } from 'emotion'
 import { colors } from '../../utils/colors'
-import Icon from '../icon/Icon'
-import Spinner from '../spinner/Spinner'
+import { Icon } from '../icon/Icon'
+import { Spinner } from '../spinner/Spinner'
 import { shadows } from '../../utils/shadows'
 import { borders } from '../../utils/borders'
 
@@ -198,4 +198,4 @@ Button.defaultProps = {
   hierarchy: 'primary',
 }
 
-export default Button
+export { Button }

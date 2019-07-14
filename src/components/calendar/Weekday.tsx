@@ -27,4 +27,4 @@ function Weekday({
   )
 }
 
-export default Weekday
+export { Weekday }

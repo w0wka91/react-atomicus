@@ -1,8 +1,8 @@
 import React from 'react'
 import { css } from 'emotion'
-import MonthSelector from './MonthSelector'
-import Header from './Header'
-import Day from './Day'
+import { MonthSelector } from './MonthSelector'
+import { Header } from './Header'
+import { Day } from './Day'
 
 interface Props {
   onSelect?: (date: Date) => void
@@ -13,7 +13,7 @@ interface Props {
   maxDate: Date
 }
 
-export enum SelectionType {
+enum SelectionType {
   SINGLE,
   MULTIPLE,
 }
@@ -116,4 +116,4 @@ Calendar.defaultProps = {
   maxDate: new Date(2099, 0, 0),
 }
 
-export default Calendar
+export { SelectionType, Calendar }

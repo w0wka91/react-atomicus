@@ -20,4 +20,4 @@ function InputError({ children }: Props) {
   )
 }
 
-export default InputError
+export { InputError }

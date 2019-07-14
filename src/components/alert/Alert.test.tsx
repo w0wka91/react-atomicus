@@ -1,7 +1,7 @@
 import React from 'react'
 import 'jest-dom/extend-expect'
 import { render, cleanup } from '@testing-library/react'
-import Alert from './Alert'
+import { Alert } from './Alert'
 
 afterEach(cleanup)
 

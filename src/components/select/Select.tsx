@@ -6,12 +6,12 @@ import React, {
   useReducer,
 } from 'react'
 import { css } from 'emotion'
-import Icon from '../icon/Icon'
+import { Icon } from '../icon/Icon'
 import { colors } from '../../utils/colors'
 import { inputBaseStyle } from '../input/Input'
-import Label from '../label/Label'
+import { Label } from '../label/Label'
 import { useId } from '../../hooks/useId'
-import InputError from '../InputError/InputError'
+import { InputError } from '../InputError/InputError'
 import { borders } from '../../utils/borders'
 
 interface ContextProps {
@@ -366,4 +366,4 @@ function Option({
   )
 }
 
-export default Select
+export { Select }

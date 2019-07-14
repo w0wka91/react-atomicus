@@ -1,7 +1,7 @@
 import React from 'react'
 import 'jest-dom/extend-expect'
 import { render, cleanup, fireEvent } from '@testing-library/react'
-import Radio from './Radio'
+import { Radio } from './Radio'
 
 afterEach(cleanup)
 

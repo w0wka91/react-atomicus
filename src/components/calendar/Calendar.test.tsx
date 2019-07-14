@@ -1,7 +1,7 @@
 import React from 'react'
 import 'jest-dom/extend-expect'
 import { render, cleanup, fireEvent } from '@testing-library/react'
-import Calendar, { SelectionType } from './Calendar'
+import { Calendar, SelectionType } from './Calendar'
 
 afterEach(cleanup)
 

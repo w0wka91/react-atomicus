@@ -3,7 +3,7 @@ import { css } from 'emotion'
 import { colors } from '../../utils/colors'
 import { borders } from '../../utils/borders'
 import { useId } from '../../hooks/useId'
-import Icon from '../icon/Icon'
+import { Icon } from '../icon/Icon'
 
 interface Props {
   label: string
@@ -84,4 +84,4 @@ function Checkbox({
   )
 }
 
-export default Checkbox
+export { Checkbox }

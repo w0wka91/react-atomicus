@@ -80,4 +80,4 @@ function MonthSelector({ locale, initial, onClickPrev, onClickNext }: Props) {
 MonthSelector.defaultProps = {
   locale: 'en-en',
 }
-export default MonthSelector
+export { MonthSelector }

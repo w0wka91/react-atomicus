@@ -1,7 +1,7 @@
 import React from 'react'
 import 'jest-dom/extend-expect'
 import { render, cleanup } from '@testing-library/react'
-import Breadcrumb from './Breadcrumb'
+import { Breadcrumb } from './Breadcrumb'
 
 afterEach(cleanup)
 
