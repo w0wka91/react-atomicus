@@ -22,6 +22,7 @@ export const inputBaseStyle = (
 ) => css`
   display: block;
   font-size: 1.4rem;
+  height: 4.2rem;
   padding: 1.2rem 1.6rem;
   border: 1px solid
     ${error ? colors.red500 : valid ? colors.green500 : colors.grey200};
@@ -64,20 +65,17 @@ function Input({
     position: absolute;
     left: ${iconLeft && '1rem'};
     right: ${iconRight && '1rem'};
-    top: ${label ? '3.1rem' : '.7rem'};
+    top: ${label ? '3.6rem' : '.8rem'};
   `
   const validationIcon = css`
     position: absolute;
     right: 1rem;
-    top: ${label ? '3.1rem' : '.7rem'};
+    top: ${label ? '3.7rem' : '1.2rem'};
   `
   return (
     <div
       className={css`
-        display: flex;
         position: relative;
-        flex-direction: column;
-        align-items: flex-start;
         width: ${fluid && '100%'};
       `}
     >

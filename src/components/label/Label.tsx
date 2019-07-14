@@ -17,6 +17,7 @@ function Label({
       className={css`
         display: inline-block;
         font-size: 1.4rem;
+        height: 2.3rem;
         font-weight: 600;
         color: ${colors.grey700};
       `}
