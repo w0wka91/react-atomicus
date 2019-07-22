@@ -40,7 +40,8 @@ export const inputBaseStyle = (
   &:focus {
     box-shadow: 0 0 0 2px ${colors.blue200};
   }
-  &:disabled {
+  &:disabled,
+  &:read-only {
     background: transparent;
     border-color: ${colors.grey100};
   }
