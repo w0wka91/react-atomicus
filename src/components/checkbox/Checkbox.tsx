@@ -6,7 +6,7 @@ import { useId } from '../../hooks/useId'
 import { Icon } from '../icon/Icon'
 
 interface Props {
-  label: string
+  label?: string
 }
 
 function Checkbox({
@@ -65,7 +65,7 @@ function Checkbox({
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1.2rem;
+            margin-right: ${label && '1.2rem'};
             border-radius: ${borders.radius};
             width: 2rem;
             height: 2rem;
