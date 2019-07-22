@@ -7,7 +7,9 @@ import { borders } from '../../utils/borders'
 import { useId } from '../../hooks/useId'
 import { InputError } from '../InputError/InputError'
 
-interface Props extends React.HTMLProps<HTMLInputElement> {
+type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'css'>
+
+interface Props extends HTMLInputProps {
   label?: string
   iconLeft?: string
   iconRight?: string
@@ -48,73 +50,79 @@ export const inputBaseStyle = (
   transition: all 0.2s linear;
 `
 
-function Input({
-  label,
-  iconLeft,
-  iconRight,
-  error,
-  valid,
-  required,
-  fluid,
-  className,
-  ...rest
-}: Props) {
-  const id = useId()
-  const icon = iconLeft ? iconLeft : iconRight
-  const iconPosition = css`
-    position: absolute;
-    left: ${iconLeft && '1rem'};
-    right: ${iconRight && '1rem'};
-    top: ${label ? '3.6rem' : '.8rem'};
-  `
-  const validationIcon = css`
-    position: absolute;
-    right: 1rem;
-    top: ${label ? '3.7rem' : '1.2rem'};
-  `
-  return (
-    <div
-      className={css`
-        position: relative;
-        width: ${fluid && '100%'};
-      `}
-    >
-      {label && (
-        <Label htmlFor={`input-${id}`} required={required}>
-          {label}
-        </Label>
-      )}
-      <input
-        id={`input-${id}`}
-        className={cx(
-          css`
-            ${inputBaseStyle(error, valid)};
-            padding-left: ${iconLeft && '3.4rem'};
-            padding-right: ${iconRight && '3.5rem'};
-          `,
-
-          className
+const Input = React.forwardRef<HTMLInputElement, Props>(
+  (
+    {
+      label,
+      iconLeft,
+      iconRight,
+      error,
+      valid,
+      required,
+      fluid,
+      className,
+      ...rest
+    }: Props,
+    ref
+  ) => {
+    const id = useId()
+    const icon = iconLeft ? iconLeft : iconRight
+    const iconPosition = css`
+      position: absolute;
+      left: ${iconLeft && '1rem'};
+      right: ${iconRight && '1rem'};
+      top: ${label ? '3.6rem' : '.8rem'};
+    `
+    const validationIcon = css`
+      position: absolute;
+      right: 1rem;
+      top: ${label ? '3.7rem' : '1.2rem'};
+    `
+    return (
+      <div
+        className={css`
+          position: relative;
+          width: ${fluid && '100%'};
+        `}
+      >
+        {label && (
+          <Label htmlFor={`input-${id}`} required={required}>
+            {label}
+          </Label>
         )}
-        {...rest}
-      />
-      {icon && !error && !valid ? (
-        <div className={iconPosition}>
-          <Icon size="1.6rem" name={icon} color={colors.grey500} />
-        </div>
-      ) : null}
-      {error || valid ? (
-        <div className={validationIcon}>
-          {error && (
-            <Icon size="1.6rem" name="alert-circle" color={colors.red500} />
+        <input
+          id={`input-${id}`}
+          ref={ref}
+          className={cx(
+            css`
+              ${inputBaseStyle(error, valid)};
+              padding-left: ${iconLeft && '3.4rem'};
+              padding-right: ${iconRight && '3.5rem'};
+            `,
+
+            className
           )}
-          {valid && (
-            <Icon size="1.6rem" name="check-circle" color={colors.green500} />
-          )}
-        </div>
-      ) : null}
-      {error && <InputError>{error}</InputError>}
-    </div>
-  )
-}
+          {...rest}
+        />
+        {icon && !error && !valid ? (
+          <div className={iconPosition}>
+            <Icon size="1.6rem" name={icon} color={colors.grey500} />
+          </div>
+        ) : null}
+        {error || valid ? (
+          <div className={validationIcon}>
+            {error && (
+              <Icon size="1.6rem" name="alert-circle" color={colors.red500} />
+            )}
+            {valid && (
+              <Icon size="1.6rem" name="check-circle" color={colors.green500} />
+            )}
+          </div>
+        ) : null}
+        {error && <InputError>{error}</InputError>}
+      </div>
+    )
+  }
+)
 
 export { Input }
