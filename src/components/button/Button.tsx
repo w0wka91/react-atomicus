@@ -146,7 +146,7 @@ function Button({
           text-decoration: ${hierarchy === 'tertiary' && 'underline'};
         }
         &:focus:enabled {
-          outline: none;
+          box-shadow: 0 0 0 1px ${colors.blue200};
         }
         &:active:enabled,
         &:target:enabled {
