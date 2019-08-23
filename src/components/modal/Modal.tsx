@@ -120,6 +120,10 @@ Modal.Header = ({
           margin-left: auto;
           border: none;
           background: transparent;
+          &:focus {
+            outline: none;
+            border-color: ${colors.blue300};
+          }
         `}
         onClick={() => {
           modalContext.onClose()
