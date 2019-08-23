@@ -21,13 +21,13 @@ function Modal({
   className,
   ...rest
 }: Props & React.HTMLProps<HTMLDivElement>) {
-  const escFunc = (ev: KeyboardEvent) => {
-    if (ev.keyCode === 27) onClose()
-  }
   useEffect(() => {
+    const escFunc = (ev: KeyboardEvent) => {
+      if (ev.keyCode === 27) onClose()
+    }
     if (open) document.addEventListener('keydown', escFunc, false)
     return () => document.removeEventListener('keydown', escFunc, false)
-  }, [open])
+  }, [open, onClose])
   return (
     <ModalContext.Provider value={{ onClose }}>
       <div
@@ -108,7 +108,7 @@ Modal.Header = ({
       >
         {children}
       </span>
-      <a
+      <button
         className={css`
           cursor: pointer;
           color: #000;
@@ -118,12 +118,16 @@ Modal.Header = ({
           display: inline-block;
           line-height: 1;
           margin-left: auto;
+          border: none;
+          background: transparent;
         `}
-        onClick={modalContext.onClose}
+        onClick={() => {
+          modalContext.onClose()
+        }}
         title="close"
       >
         &times;
-      </a>
+      </button>
     </div>
   )
 }
@@ -174,4 +178,5 @@ Modal.Footer = ({
 Modal.defaultProps = {
   open: false,
 }
+
 export { Modal }
