@@ -14,6 +14,7 @@ import { shadows } from './utils/shadows'
 import { sizes } from './utils/sizes'
 import { fontSizes } from './utils/fontSizes'
 import { borders } from './utils/borders'
+import * as animations from './utils/animations'
 
 export {
   Button,
@@ -32,4 +33,5 @@ export {
   sizes,
   fontSizes,
   borders,
+  animations,
 }
