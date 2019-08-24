@@ -89,9 +89,9 @@ Modal.Header = ({
       className={cx(
         css`
           display: flex;
-          justify-content: center;
+          justify-content: baseline;
           border-radius: ${borders.radius};
-          align-items: center;
+          align-items: baseline;
           padding: 1.8rem;
           flex-shrink: 0;
           width: 100%;
@@ -103,7 +103,8 @@ Modal.Header = ({
     >
       <span
         className={css`
-          font-size: 2rem;
+          font-size: 1.8rem;
+          font-weight: 600;
         `}
       >
         {children}
