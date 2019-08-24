@@ -87,6 +87,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         className={css`
           position: relative;
           width: ${fluid && '100%'};
+          text-align: left;
         `}
       >
         {label && (
