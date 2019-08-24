@@ -6,6 +6,7 @@ import { Icon } from '../icon/Icon'
 import { borders } from '../../utils/borders'
 import { useId } from '../../hooks/useId'
 import { InputError } from '../InputError/InputError'
+import { InputInfo } from '../InputInfo/InputInfo'
 
 type HTMLInputProps = Omit<React.HTMLProps<HTMLInputElement>, 'css'>
 
@@ -13,6 +14,7 @@ interface Props extends HTMLInputProps {
   label?: string
   iconLeft?: string
   iconRight?: string
+  info?: string
   error?: string
   valid?: boolean
   fluid?: boolean
@@ -61,6 +63,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       valid,
       required,
       fluid,
+      info,
       className,
       ...rest
     }: Props,
@@ -120,7 +123,11 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
             )}
           </div>
         ) : null}
-        {error && <InputError>{error}</InputError>}
+        {error ? (
+          <InputError>{error}</InputError>
+        ) : (
+          <InputInfo>{info}</InputInfo>
+        )}
       </div>
     )
   }

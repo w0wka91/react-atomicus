@@ -5,13 +5,13 @@ import { colors } from '../../utils/colors'
 interface Props {
   children: React.ReactNode
 }
-function InputError({ children }: Props) {
+function InputInfo({ children }: Props) {
   return (
     <span
       className={css`
         display: inline-block;
         font-size: 1.2rem;
-        color: ${colors.red500};
+        color: ${colors.grey600};
       `}
     >
       {children}
@@ -19,4 +19,4 @@ function InputError({ children }: Props) {
   )
 }
 
-export { InputError }
+export { InputInfo }

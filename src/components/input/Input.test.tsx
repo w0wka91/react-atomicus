@@ -8,7 +8,7 @@ afterEach(cleanup)
 it('should represent the passed value', () => {
   const func = jest.fn()
   const { getByLabelText } = render(
-    <Input label="Username" value="w0wka91" onChange={func} />
+    <Input info="test" label="Username" value="w0wka91" onChange={func} />
   )
   expect((getByLabelText('Username') as HTMLInputElement).value).toBe('w0wka91')
 })
