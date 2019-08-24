@@ -1,8 +1,9 @@
-import React, { createContext, useEffect, useContext } from 'react'
 import { css, cx } from 'emotion'
-import { shadows } from '../../utils/shadows'
+import React, { createContext, useContext, useEffect } from 'react'
+import { zoomIn, zoomOut } from '../../utils/animations'
 import { borders } from '../../utils/borders'
 import { colors } from '../../utils/colors'
+import { shadows } from '../../utils/shadows'
 
 interface Props {
   open: boolean
@@ -45,7 +46,6 @@ function Modal({
           justify-content: center;
           opacity: ${open ? '1' : '0'};
           visibility: ${open ? 'visible' : 'hidden'};
-          transition: all 0.3s;
         `}
       >
         <div
@@ -62,10 +62,10 @@ function Modal({
               box-shadow: ${shadows[4]};
               opacity: 1;
               z-index: 3000;
-              opacity: ${open ? 1 : 0};
-              transform: ${open ? 'scale(1)' : 'scale(.5)'};
-              visibility: ${open ? 'visible' : 'hidden'};
-              transition: all 0.3s;
+              animation: ${open
+                ? css`${zoomIn} 1s ease}`
+                : css`${zoomOut} 1s ease}`};
+              animation-duration: 0.3s;
             `,
             className
           )}
