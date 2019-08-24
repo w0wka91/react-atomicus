@@ -23,4 +23,4 @@ function DoczWrapper({ children }: Props) {
   )
 }
 
-export default DoczWrapper
+export { DoczWrapper }
