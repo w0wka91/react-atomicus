@@ -1,5 +1,5 @@
 import { cleanup, render } from '@testing-library/react'
-import 'jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { Icon } from './Icon'
 
