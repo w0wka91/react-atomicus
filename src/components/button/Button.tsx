@@ -153,7 +153,7 @@ function Button({
           transform: scale(0.99);
         }
         *:not(:last-child) {
-          margin-right: .4rem;
+          margin-right: .8rem;
         }
         ${btnSize[size]}
         color: ${hierarchy === 'primary' ? '#FFFFFF' : fontColor[intent]};
