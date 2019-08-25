@@ -9,6 +9,7 @@ import { Icon } from './components/icon/Icon'
 import { Calendar } from './components/calendar/Calendar'
 import { Normalize } from './components/normalize/Normalize'
 import { Select } from './components/select/Select'
+import { Dropdown } from './components/dropdown/Dropdown'
 import { colors } from './utils/colors'
 import { shadows } from './utils/shadows'
 import { sizes } from './utils/sizes'
@@ -28,6 +29,7 @@ export {
   Calendar,
   Normalize,
   Select,
+  Dropdown,
   colors,
   shadows,
   sizes,

@@ -1,0 +1,23 @@
+---
+name: Dropdown
+---
+
+import { Playground } from 'docz'
+import { Dropdown } from './Dropdown'
+import { useToggle } from '../../hooks/useToggle'
+
+# Dropdown
+
+Basic usage of a dropdown component
+
+<Playground>
+  <Dropdown
+    label="Perform Action"
+    menuItems={[
+      { key: 1, icon: 'phone-incoming', label: 'Inbound Call' },
+      { key: 2, icon: 'phone-outgoing', label: 'Outbound Call' },
+      { key: 3, icon: 'user', label: 'Meeting' },
+      { key: 4, icon: 'clipboard', label: 'Note' },
+    ]}
+  />
+</Playground>
