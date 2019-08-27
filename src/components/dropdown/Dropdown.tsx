@@ -21,11 +21,13 @@ interface MenuItem {
 const fadeDown = keyframes`
   from {
     opacity: 0;
+    visibility: hidden;
     transform: translate3d(0, -5%, 0);
   }
 
   to {
     opacity: 1;
+    visibility: visible;
     transform: translate3d(0, 0, 0);
   }
 `
@@ -33,10 +35,12 @@ const fadeDown = keyframes`
 const fadeUp = keyframes`
   from {
     opacity: 1;
+    visibility: visible;
   }
 
   to {
     opacity: 0;
+    visibility: hidden;
     transform: translate3d(0, -5%, 0);
   }
 `
@@ -96,6 +100,7 @@ function Dropdown({ label, title, icon, menuItems, onSelect }: Props) {
             border: 1px solid ${colors.grey100};
             box-shadow: ${shadows[0]};
             opacity: 0;
+            visibility: hidden;
             ${unfoldedOnce && animation}
           `}
         >
@@ -105,7 +110,6 @@ function Dropdown({ label, title, icon, menuItems, onSelect }: Props) {
               padding: 0;
               margin: 0;
               color: ${colors.grey700};
-              font-size: 1.4rem;
             `}
           >
             {menuItems.map(item => (
@@ -123,6 +127,7 @@ function Dropdown({ label, title, icon, menuItems, onSelect }: Props) {
                     align-items: center;
                     cursor: pointer;
                     padding: 0.8rem 1.2rem;
+                    font-size: 1.6rem;
                     border: none;
                     width: 100%;
                     color: ${colors.grey800};
