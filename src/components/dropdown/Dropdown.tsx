@@ -1,8 +1,11 @@
 import { keyframes } from '@emotion/core'
 import { css } from 'emotion'
 import React, { useState, useRef, useEffect } from 'react'
-import { borders, colors, shadows, Icon } from '../..'
 import { Button } from '../button/Button'
+import { borders } from '../../utils/borders'
+import { colors } from '../../utils/colors'
+import { shadows } from '../../utils/shadows'
+import { Icon } from '../icon/Icon'
 
 interface Props {
   label: string
