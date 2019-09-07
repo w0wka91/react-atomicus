@@ -66,4 +66,31 @@ const slideInDown = keyframes`
   }
 `
 
-export { bounce, zoomIn, zoomOut, slideInUp, slideInDown }
+const fadeDown = keyframes`
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -5%, 0);
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+`
+
+const fadeUp = keyframes`
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -5%, 0);
+  }
+`
+
+export { bounce, zoomIn, zoomOut, slideInUp, slideInDown, fadeDown, fadeUp }

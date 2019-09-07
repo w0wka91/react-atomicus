@@ -1,10 +1,10 @@
-import { keyframes } from '@emotion/core'
 import { css } from 'emotion'
-import React, { useState, useRef, useEffect } from 'react'
-import { Button } from '../button/Button'
+import React, { useEffect, useRef, useState } from 'react'
+import { fadeDown, fadeUp } from '../../utils/animations'
 import { borders } from '../../utils/borders'
 import { colors } from '../../utils/colors'
 import { shadows } from '../../utils/shadows'
+import { Button } from '../button/Button'
 import { Icon } from '../icon/Icon'
 
 interface Props {
@@ -20,33 +20,6 @@ interface MenuItem {
   label: string
   icon?: string
 }
-
-const fadeDown = keyframes`
-  from {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate3d(0, -5%, 0);
-  }
-
-  to {
-    opacity: 1;
-    visibility: visible;
-    transform: translate3d(0, 0, 0);
-  }
-`
-
-const fadeUp = keyframes`
-  from {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  to {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate3d(0, -5%, 0);
-  }
-`
 
 function Dropdown({ label, title, icon, menuItems, onSelect }: Props) {
   const [collapsed, setCollapsed] = useState(true)
