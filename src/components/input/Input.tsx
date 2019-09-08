@@ -126,9 +126,9 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         ) : null}
         {error ? (
           <InputError>{error}</InputError>
-        ) : (
+        ) : info ? (
           <InputInfo>{info}</InputInfo>
-        )}
+        ) : null}
       </div>
     )
   }
