@@ -29,6 +29,11 @@ function Modal({
     if (open) document.addEventListener('keydown', escFunc, false)
     return () => document.removeEventListener('keydown', escFunc, false)
   }, [open, onClose])
+  const animation = css`
+    animation: ${open ? zoomIn : zoomOut};
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  `
   return (
     <ModalContext.Provider value={{ onClose }}>
       <div
@@ -62,10 +67,7 @@ function Modal({
               box-shadow: ${shadows[4]};
               opacity: 1;
               z-index: 3000;
-              animation: ${open
-                ? css`${zoomIn} 1s ease}`
-                : css`${zoomOut} 1s ease}`};
-              animation-duration: 0.3s;
+              ${animation}
             `,
             className
           )}
