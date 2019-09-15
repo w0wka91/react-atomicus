@@ -83,7 +83,15 @@ function Calendar({
               `}
               key={dayjs.unix()}
               title={dayjs.toDate().toLocaleDateString(locale)}
-              onClick={() => onSelect && onSelect(dayjs.toDate(), dayjs)}
+              onClick={() => {
+                if (
+                  onSelect &&
+                  dayjs.isAfter(Dayjs(minDate)) &&
+                  dayjs.isBefore(Dayjs(maxDate))
+                ) {
+                  onSelect(dayjs.toDate(), dayjs)
+                }
+              }}
               selected={
                 selectedDates
                   .map(d => Dayjs(d))

@@ -61,7 +61,6 @@ it('should execute passed function on select', () => {
   fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
   fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
   expect(onSelect).toHaveBeenCalledTimes(2)
-  expect(onSelect).toBeCalledWith(dateInMonth)
 })
 
 it('shouldnt execute the passed function if date selection is before/after the defined min/max date', () => {
