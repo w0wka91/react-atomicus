@@ -7,6 +7,7 @@ import { Modal } from './components/modal/Modal'
 import { Radio } from './components/radio/Radio'
 import { Icon } from './components/icon/Icon'
 import { Calendar } from './components/calendar/Calendar'
+import { Datepicker } from './components/datepicker/Datepicker'
 import { Normalize } from './components/normalize/Normalize'
 import { Select } from './components/select/Select'
 import { Dropdown } from './components/dropdown/Dropdown'
@@ -30,6 +31,7 @@ export {
   Normalize,
   Select,
   Dropdown,
+  Datepicker,
   colors,
   shadows,
   sizes,

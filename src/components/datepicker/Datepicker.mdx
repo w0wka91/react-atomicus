@@ -1,0 +1,28 @@
+---
+name: Datepicker
+---
+
+import { Playground } from 'docz'
+import { Datepicker } from './Datepicker'
+import { useToggle } from '../../hooks/useToggle'
+import Dayjs from '../../utils/dayjs'
+
+# Datepicker
+
+Basic usage of a datepicker component
+
+<Playground>
+  <Datepicker
+    formatDate={date => {
+      return Dayjs(date).format('DD.MM.YYYY')
+    }}
+    parseDate={dateStr => {
+      const date = Dayjs(dateStr, 'DD.MM.YYYY')
+      if (date.isValid()) {
+        return date.toDate()
+      }
+    }}
+
+/>
+
+</Playground>
