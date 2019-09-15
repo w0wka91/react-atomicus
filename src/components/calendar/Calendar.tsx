@@ -1,29 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { css } from 'emotion'
 import { MonthSelector } from './MonthSelector'
 import { Header } from './Header'
 import { Day } from './Day'
+import Dayjs from 'dayjs'
 
 interface Props {
-  onSelect?: (date: Date) => void
+  onSelect?: (date: Date, day: Dayjs.Dayjs) => void
   locale: string
-  selectionMode: SelectionType
   initDate: Date
   minDate: Date
   maxDate: Date
+  selectedDates: Date[]
 }
 
-enum SelectionType {
-  SINGLE,
-  MULTIPLE,
-}
-
-function getDaysInMonth(month: number, year: number): Date[] {
-  let date = new Date(year, month, 1)
-  let days: Array<Date> = []
-  while (date.getMonth() === month) {
-    days.push(new Date(date))
-    date.setDate(date.getDate() + 1)
+function getDaysInMonth(month: number, year: number): Dayjs.Dayjs[] {
+  let date = Dayjs()
+    .month(month)
+    .year(year)
+    .date(1)
+    .hour(0)
+    .minute(0)
+    .second(0)
+    .millisecond(0)
+  let days: Dayjs.Dayjs[] = []
+  while (date.month() === month) {
+    days.push(date)
+    date = date.add(1, 'day')
   }
   return days
 }
@@ -31,30 +34,22 @@ function getDaysInMonth(month: number, year: number): Date[] {
 function Calendar({
   onSelect,
   locale,
-  selectionMode,
   initDate,
   minDate,
   maxDate,
+  selectedDates,
   ...rest
 }: Props) {
-  const [selectedDates, setSelectedDates] = React.useState<number[]>([])
   const [initialDate, setInitialDate] = React.useState(initDate)
   const daysInMonth = getDaysInMonth(
     initialDate.getMonth(),
     initialDate.getFullYear()
   )
-  const handleDayClick = (date: Date) => {
-    let newDates: number[] = []
-    if (selectedDates.includes(date.getTime())) {
-      newDates = selectedDates.filter(dateTime => dateTime !== date.getTime())
-    } else if (selectionMode === SelectionType.MULTIPLE) {
-      newDates = selectedDates.concat(date.getTime())
-    } else if (selectionMode === SelectionType.SINGLE) {
-      newDates = [date.getTime()]
+  useEffect(() => {
+    if (selectedDates && selectedDates.length > 0) {
+      setInitialDate(selectedDates[selectedDates.length - 1])
     }
-    setSelectedDates(newDates)
-    onSelect && onSelect(date)
-  }
+  }, [selectedDates])
   return (
     <div
       className={css`
@@ -80,25 +75,28 @@ function Calendar({
         `}
       >
         <Header />
-        {daysInMonth.map((date, index) => {
+        {daysInMonth.map((dayjs, index) => {
           return (
             <Day
               className={css`
-                grid-column-start: ${index === 0 ? date.getDay() + 1 : 0};
+                grid-column-start: ${index === 0 ? dayjs.date() : 0};
               `}
-              key={date.getTime()}
-              title={date.toLocaleDateString(locale)}
-              onClick={() => handleDayClick(date)}
-              selected={selectedDates.includes(date.getTime())}
+              key={dayjs.unix()}
+              title={dayjs.toDate().toLocaleDateString(locale)}
+              onClick={() => onSelect && onSelect(dayjs.toDate(), dayjs)}
+              selected={
+                selectedDates
+                  .map(d => Dayjs(d))
+                  .find(d => d.isSame(dayjs, 'day')) !== undefined
+              }
               disabled={
-                date.setHours(0, 0, 0, 0) < minDate.setHours(0, 0, 0, 0) ||
-                date.setHours(0, 0, 0, 0) > maxDate.setHours(0, 0, 0, 0)
+                dayjs.isBefore(Dayjs(minDate)) || dayjs.isAfter(Dayjs(maxDate))
               }
             >
-              {new Date().toDateString() === date.toDateString() ? (
-                <b>{date.getDate()}</b>
+              {dayjs.isSame(Dayjs(), 'day') ? (
+                <b>{dayjs.date()}</b>
               ) : (
-                date.getDate()
+                dayjs.date()
               )}
             </Day>
           )
@@ -110,10 +108,10 @@ function Calendar({
 
 Calendar.defaultProps = {
   locale: 'en-US',
-  selectionMode: SelectionType.MULTIPLE,
   initDate: new Date(),
   minDate: new Date(1900, 0, 0),
   maxDate: new Date(2099, 0, 0),
+  selectedDates: [],
 }
 
-export { SelectionType, Calendar }
+export { Calendar }

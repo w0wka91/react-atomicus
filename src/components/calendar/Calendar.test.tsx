@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render, cleanup, fireEvent } from '@testing-library/react'
-import { Calendar, SelectionType } from './Calendar'
+import { Calendar } from './Calendar'
 
 afterEach(cleanup)
 
@@ -51,30 +51,12 @@ it('should switch the previous month', () => {
   ).toBeInTheDocument()
 })
 
-it('should execute passed function on select in multiple selection mode', () => {
+it('should execute passed function on select', () => {
   const initialDate = new Date(1990, 10)
   const dateInMonth = new Date(1990, 10, 2)
   const onSelect = jest.fn()
   const { getByTitle } = render(
     <Calendar locale="en-US" initDate={initialDate} onSelect={onSelect} />
-  )
-  fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
-  fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
-  expect(onSelect).toHaveBeenCalledTimes(2)
-  expect(onSelect).toBeCalledWith(dateInMonth)
-})
-
-it('should execute passed function on select in single selection mode', () => {
-  const initialDate = new Date(1990, 10)
-  const dateInMonth = new Date(1990, 10, 2)
-  const onSelect = jest.fn()
-  const { getByTitle } = render(
-    <Calendar
-      locale="en-US"
-      initDate={initialDate}
-      onSelect={onSelect}
-      selectionMode={SelectionType.SINGLE}
-    />
   )
   fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
   fireEvent.click(getByTitle(dateInMonth.toLocaleDateString('en-US')))
