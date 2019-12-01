@@ -1,0 +1,23 @@
+---
+name: Toggle
+---
+
+import { Playground } from 'docz'
+import { Toggle } from './Toggle'
+import { useToggle } from '../../hooks/useToggle'
+
+# Toggle
+
+Basic usage of a toggle component
+
+<Playground>
+  {() => {
+    const [toggleValue, toggle] = useToggle(false)
+    return (
+      <>
+        <Toggle label="Toggle" onChange={toggle} checked={toggleValue} />
+      </>
+    )
+}}
+
+</Playground>
