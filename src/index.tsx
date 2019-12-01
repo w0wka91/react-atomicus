@@ -11,6 +11,7 @@ import { Datepicker } from './components/datepicker/Datepicker'
 import { Normalize } from './components/normalize/Normalize'
 import { Select } from './components/select/Select'
 import { Dropdown } from './components/dropdown/Dropdown'
+import { Toggle } from './components/toggle/Toggle'
 import { colors } from './utils/colors'
 import { shadows } from './utils/shadows'
 import { sizes } from './utils/sizes'
@@ -32,6 +33,7 @@ export {
   Select,
   Dropdown,
   Datepicker,
+  Toggle,
   colors,
   shadows,
   sizes,
