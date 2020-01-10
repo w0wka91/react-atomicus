@@ -4,7 +4,7 @@ name: Calendar
 
 import { Playground } from 'docz'
 import { useState } from 'react'
-import { Calendar, SelectionType } from './Calendar'
+import { Calendar } from './Calendar'
 
 # Calendar
 
@@ -21,25 +21,24 @@ The minimum/maximum date that a user can select can be restricted
     const [selectedDates, setSelectedDates] = useState([])
     return (
       <>
-          <Calendar
-            initDate={new Date(2019, 10)}
-            minDate={new Date(2019, 10, 2)}
-            maxDate={new Date(2019, 10, 10)}
-            selectedDates={selectedDates}
-            onSelect={date => {
-              if(selectedDates.find(d => Dayjs(d).isSame(Dayjs(date), 'day'))) {
-                setSelectedDates(selectedDates.filter(d => !Dayjs(d).isSame(Dayjs(date), 'day')))
-              } else {
-                setSelectedDates([...selectedDates, date])}
-              }
+        <Calendar
+          initDate={new Date(2019, 10)}
+          minDate={new Date(2019, 10, 2)}
+          maxDate={new Date(2019, 10, 10)}
+          selectedDates={selectedDates}
+          onSelect={date => {
+            if (selectedDates.find(d => Dayjs(d).isSame(Dayjs(date), 'day'))) {
+              setSelectedDates(
+                selectedDates.filter(d => !Dayjs(d).isSame(Dayjs(date), 'day'))
+              )
+            } else {
+              setSelectedDates([...selectedDates, date])
             }
-          />
+          }}
+        />
       </>
-
     )
-
-}}
-
+  }}
 </Playground>
 
 You can pass preselected dates

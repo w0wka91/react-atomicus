@@ -48,10 +48,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "resolutions": {
-    "docz*/**/babel-loader": "8.0.5",
-    "docz/**/webpack": "4.28.4"
-  },
   "devDependencies": {
     "@babel/cli": "7.5.5",
     "@babel/core": "7.5.5",
@@ -70,9 +66,9 @@
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "babel-preset-minify": "^0.5.1",
-    "docz": "^1.2.0",
-    "docz-theme-default": "^1.2.0",
+    "docz": "^2.2.0",
     "feather-icons": "^4.24.1",
+    "gatsby-plugin-emotion": "^4.1.21",
     "husky": "^3.0.4",
     "prettier": "1.18.2",
     "react": "^16.9.0",

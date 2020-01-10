@@ -13,102 +13,84 @@ import rachel from './rachel.png'
 
 Simple modal
 
+const [toggleValue, toggle] = useToggle(false)
+
 <Playground>
-  {() => {
-    const [toggleValue, toggle] = useToggle(false)
-    return (
-      <>
-        <Button onClick={toggle}>Show Modal</Button>
-        <Modal open={toggleValue} onClose={toggle}>
-          <Modal.Header>Select a Photo</Modal.Header>
-          <Modal.Content style={{ display: 'flex' }}>
-            <img src={rachel} width={300} height={300} />
-            <div style={{ paddingLeft: '2rem' }}>
-              <h3 style={{ marginTop: '0', marginBottom: '1.5rem' }}>
-                Default profile image
-              </h3>
-              <p style={{ width: '55rem' }}>
-                We've found the following gravatar image associated with your
-                e-mail address.
-              </p>
-              <p style={{ paddingTop: '1.5rem' }}>
-                Is it okay to use this photo?
-              </p>
-            </div>
-          </Modal.Content>
-          <Modal.Footer>
-            <Button intent="success">Yep, that's me</Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    )
-
-}}
-
+  <Button onClick={toggle}>Show Modal</Button>
+  <Modal open={toggleValue} onClose={toggle}>
+    <Modal.Header>Select a Photo</Modal.Header>
+    <Modal.Content style={{ display: 'flex' }}>
+      <img src={rachel} width={300} height={300} />
+      <div style={{ paddingLeft: '2rem' }}>
+        <h3 style={{ marginTop: '0', marginBottom: '1.5rem' }}>
+          Default profile image
+        </h3>
+        <p style={{ width: '55rem' }}>
+          We've found the following gravatar image associated with your e-mail
+          address.
+        </p>
+        <p style={{ paddingTop: '1.5rem' }}>Is it okay to use this photo?</p>
+      </div>
+    </Modal.Content>
+    <Modal.Footer>
+      <Button intent="success">Yep, that's me</Button>
+    </Modal.Footer>
+  </Modal>
 </Playground>
 
 Scrolling long content
 
 <Playground>
-  {() => {
-    const [toggleValue, toggle] = useToggle(false)
-    return (
-      <div>
-        <Modal open={toggleValue} onClose={toggle}>
-          <Modal.Header>Scrolling content</Modal.Header>
-          <Modal.Content style={{ maxWidth: '50vw' }}>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros. Praesent commodo cursus
-            magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
-            vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia
-            bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla. Cras mattis
-            consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-            facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
-            augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum
-            nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla. Cras mattis
-            consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-            facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
-            augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum
-            nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla. Cras mattis
-            consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-            facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
-            augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum
-            nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla. Cras mattis
-            consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-            facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
-            augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum
-            nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla. Cras mattis
-            consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
-            facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
-            augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum
-            nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla.
-          </Modal.Content>
-        </Modal>
-        <Button onClick={toggle}>Show Modal</Button>
-      </div>
-    )
-  }}
+  <div>
+    <Modal open={toggleValue} onClose={toggle}>
+      <Modal.Header>Scrolling content</Modal.Header>
+      <Modal.Content style={{ maxWidth: '50vw' }}>
+        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+        consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
+        scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+        laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed
+        consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+        consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+        auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Cras
+        justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus,
+        porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus
+        magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel
+        augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum
+        nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+        nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+        metus auctor fringilla. Cras mattis consectetur purus sit amet
+        fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
+        commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus
+        sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean
+        lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna,
+        vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+        ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur
+        purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+        egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum
+        at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur
+        et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+        auctor. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+        cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.
+        Donec ullamcorper nulla non metus auctor fringilla. Cras mattis
+        consectetur purus sit amet fermentum. Cras justo odio, dapibus ac
+        facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur
+        ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque
+        nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
+        faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur.
+        Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+        Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+        consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
+        scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+        laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed
+        consectetur. Praesent commodo cursus magna, vel scelerisque nisl
+        consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+        auctor fringilla.
+      </Modal.Content>
+    </Modal>
+    <Button onClick={toggle}>Show Modal</Button>
+  </div>
 </Playground>
