@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/core'
 
-const bounce = keyframes`
+const bounce: any = keyframes`
   from, 20%, 53%, 80%, to {
     transform: translate3d(0,0,0);
   }
@@ -18,7 +18,7 @@ const bounce = keyframes`
   }
 `
 
-const zoomIn = keyframes`
+const zoomIn: any = keyframes`
     from {
       opacity: 0;
       transform: scale3d(0.3, 0.3, 0.3);
@@ -29,7 +29,7 @@ const zoomIn = keyframes`
     }
 `
 
-const zoomOut = keyframes`
+const zoomOut: any = keyframes`
     from {
       opacity: 1;
     }
@@ -44,7 +44,7 @@ const zoomOut = keyframes`
     }
 `
 
-const slideInUp = keyframes`
+const slideInUp: any = keyframes`
     from {
       transform: translate3d(0, 100%, 0);
       visibility: visible;
@@ -55,7 +55,7 @@ const slideInUp = keyframes`
     }
 `
 
-const slideInDown = keyframes`
+const slideInDown: any = keyframes`
   from {
     transform: translate3d(0, -100%, 0);
     visibility: visible;
@@ -66,7 +66,7 @@ const slideInDown = keyframes`
   }
 `
 
-const fadeDown = keyframes`
+const fadeDown: any = keyframes`
   from {
     opacity: 0;
     visibility: hidden;
@@ -80,7 +80,7 @@ const fadeDown = keyframes`
   }
 `
 
-const fadeUp = keyframes`
+const fadeUp: any = keyframes`
   from {
     opacity: 1;
     visibility: visible;
